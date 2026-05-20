@@ -720,3 +720,85 @@ header {
   .newsletter h2 { font-size:32px; }
   .nav-links { width:100%; }
 }
+
+/* CLOSE BUTTON FIX */
+
+.close-menu{
+position:absolute;
+
+top:24px;
+
+right:24px;
+
+width:48px;
+
+height:48px;
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+background:#ffffff;
+
+border-radius:14px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+color:#1f6f45;
+
+font-size:24px;
+
+cursor:pointer;
+
+z-index:99999;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+}
+
+/* SHOW ONLY WHEN MENU OPEN */
+
+.nav-links.active .close-menu{
+
+display:flex;
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-links{
+
+position:fixed;
+
+top:0;
+
+right:-100%;
+
+width:350px;
+
+height:100vh;
+
+background:white;
+
+z-index:99998;
+
+}
+
+.nav-links.active{
+
+right:0;
+
+}
+
+}

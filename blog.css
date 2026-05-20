@@ -151,6 +151,252 @@
 .bln-form .btn-primary { border-radius: 0 70px 70px 0; }
 .bln-note { color: rgba(255,255,255,.5); font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 8px; }
  
+/* =========================
+FOOTER
+========================= */
+
+.site-footer{
+  background: linear-gradient(180deg,#102a18,#09140c);
+  color: white;
+  padding: 100px 8% 30px;
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow effect */
+
+.site-footer::before{
+  content:"";
+  position:absolute;
+  top:-120px;
+  right:-120px;
+
+  width:320px;
+  height:320px;
+
+  background:
+  radial-gradient(
+  circle,
+  rgba(218,181,96,.15),
+  transparent 70%
+  );
+
+  filter:blur(30px);
+}
+
+/* GRID */
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:50px;
+
+  position:relative;
+  z-index:2;
+}
+
+/* LOGO */
+
+.footer-logo img{
+  height:58px;
+  margin-bottom:20px;
+}
+
+/* BRAND */
+
+.footer-brand p{
+  line-height:1.9;
+  opacity:.85;
+  max-width:320px;
+}
+
+/* TITLES */
+
+.footer-col h4{
+  font-size:22px;
+  margin-bottom:22px;
+
+  color:yellow;
+
+  position:relative;
+}
+
+.footer-col h4::after{
+  content:"";
+
+  width:45px;
+  height:2px;
+
+  background:var(--gold);
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+}
+
+/* LINKS */
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin-bottom:14px;
+}
+
+.footer-col a{
+  color:white;
+
+  opacity:.8;
+
+  text-decoration:none;
+
+  transition:.35s;
+}
+
+.footer-col a:hover{
+  color:var(--gold);
+
+  padding-left:8px;
+
+  opacity:1;
+}
+
+/* CONTACT */
+
+.contact-line{
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:12px;
+
+  margin-bottom:16px;
+
+  opacity:.9;
+}
+
+.contact-line i{
+  color:var(--gold);
+
+  margin-top:4px;
+
+  font-size:17px;
+}
+
+.contact-line p{
+  line-height:1.8;
+}
+
+/* SOCIAL */
+
+.footer-social{
+  display:flex;
+
+  gap:18px;
+
+  margin-top:32px;
+}
+
+.footer-social a{
+  width:54px;
+  height:54px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.08);
+
+  color:white;
+
+  font-size:18px;
+
+  transition:.4s;
+}
+
+.footer-social a:hover{
+  background:var(--gold);
+
+  color:#111;
+
+  transform:
+  translateY(-8px)
+  scale(1.08);
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+  margin-top:50px;
+
+  padding-top:25px;
+
+  border-top:
+  1px solid rgba(255,255,255,.08);
+
+  text-align:center;
+
+  opacity:.7;
+
+  position:relative;
+
+  z-index:2;
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:900px){
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:600px){
+
+.site-footer{
+padding:80px 6% 25px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+gap:45px;
+}
+
+.footer-social{
+justify-content:flex-start;
+flex-wrap:wrap;
+}
+
+.footer-col h4{
+font-size:20px;
+}
+
+.footer-logo img{
+height:50px;
+}
+
+.footer-bottom{
+font-size:13px;
+}
+
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width: 991px) {
   .bh-container { grid-template-columns: 1fr; text-align: center; padding-top: 160px; }
@@ -174,4 +420,86 @@
 }
 @media(max-width: 480px) {
   .bh-left h1 { font-size: 32px; }
+}
+
+/* CLOSE BUTTON FIX */
+
+.close-menu{
+position:absolute;
+
+top:24px;
+
+right:24px;
+
+width:48px;
+
+height:48px;
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+background:#ffffff;
+
+border-radius:14px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+color:#1f6f45;
+
+font-size:24px;
+
+cursor:pointer;
+
+z-index:99999;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+}
+
+/* SHOW ONLY WHEN MENU OPEN */
+
+.nav-links.active .close-menu{
+
+display:flex;
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-links{
+
+position:fixed;
+
+top:0;
+
+right:-100%;
+
+width:350px;
+
+height:100vh;
+
+background:;
+
+z-index:99998;
+
+}
+
+.nav-links.active{
+
+right:0;
+
+}
+
 }
