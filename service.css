@@ -204,7 +204,7 @@ header { position:fixed; top:0; left:0; width:100%; z-index:9999; }
 }
 .cta-content .hero-btn { position:relative; z-index:2; }
  
-/* ── FOOTER ── */
+
 footer {
   background:linear-gradient(180deg,#102a18,#09140c);
   color:white; padding:100px 8% 30px; margin-top:80px;
