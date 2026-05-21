@@ -1,3 +1,4 @@
+
 /* ============================================
    FARMLY PREMIUM — STYLE.CSS
    Enhanced: shapes, animations, hamburger
@@ -798,6 +799,219 @@ z-index:99998;
 .nav-links.active{
 
 right:0;
+
+}
+
+}
+
+
+
+/* ==========================
+FOOTER CENTER ALIGN
+========================== */
+
+footer{
+
+background:#07120c;
+
+color:white;
+
+padding:100px 20px 30px;
+
+text-align:center;
+
+}
+
+.footer-container{
+
+max-width:1400px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:50px;
+
+align-items:start;
+
+justify-items:center;
+
+}
+
+/* LOGO */
+
+.footer-logo{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.footer-logo img{
+
+width:180px;
+
+height:auto;
+
+}
+
+/* CONTENT */
+
+.footer-container p{
+
+color:#9fb0a5;
+
+line-height:1.8;
+
+}
+
+.footer-container h3{
+
+font-size:22px;
+
+margin-bottom:18px;
+
+color:#ffd66b;
+
+}
+
+.footer-links{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+align-items:center;
+
+}
+
+.footer-links li{
+
+list-style:none;
+
+}
+
+.footer-links a{
+
+color:#a7b7ac;
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+color:#4de28b;
+
+}
+
+/* SOCIAL */
+
+.social-icons{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:16px;
+
+margin-top:50px;
+
+}
+
+.social-icons a{
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:
+
+rgba(255,255,255,.08);
+
+color:white;
+
+font-size:18px;
+
+transition:.35s;
+
+}
+
+.social-icons a:hover{
+
+background:#4de28b;
+
+transform:
+translateY(-6px);
+
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+
+margin-top:40px;
+
+padding-top:24px;
+
+border-top:
+
+1px solid
+rgba(255,255,255,.08);
+
+text-align:center;
+
+color:#7f9186;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.footer-container{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+text-align:center;
+
+}
+
+.footer-logo{
+
+justify-content:center;
+
+}
+
+.footer-links{
+
+align-items:center;
+
+}
+
+.social-icons{
+
+flex-wrap:wrap;
 
 }
 

@@ -440,6 +440,114 @@ font-size:13px;
   .about-stats { grid-template-columns: 1fr; }
   .cta-inner h2 { font-size: 32px; }
 }
+
+/* ==========================
+FOOTER MOBILE CENTER FIX
+========================== */
+
+@media (max-width:768px){
+
+.footer{
+
+text-align:center;
+
+}
+
+.footer-container{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+justify-items:center;
+
+align-items:center;
+
+gap:40px;
+
+text-align:center;
+
+}
+
+.footer-box{
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.footer-logo{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.footer-logo img{
+
+margin:0 auto 20px;
+
+}
+
+.footer-box ul{
+
+align-items:center;
+
+}
+
+.footer-box p{
+
+max-width:320px;
+
+margin:auto;
+
+}
+
+.social{
+
+justify-content:center;
+
+align-items:center;
+
+width:100%;
+
+}
+
+.footer-bottom{
+
+text-align:center;
+
+padding:24px;
+
+}
+
+}
+
+/* EXTRA SMALL */
+
+@media (max-width:420px){
+
+.footer{
+
+padding-top:90px;
+
+}
+
+.footer-box p{
+
+max-width:260px;
+
+}
+
+}
 /* CLOSE BUTTON FIX */
 
 .close-menu{
@@ -517,3 +625,4 @@ z-index:99998;
 right:0;
 }
 }
+
