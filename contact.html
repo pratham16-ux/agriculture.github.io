@@ -4,191 +4,551 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Stackly Farm</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="shared.css">
+  <!-- Page-specific styles -->
   <link rel="stylesheet" href="contact.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- MOBILE HEADER -->
-<div class="mobile-header">
-  <a href="index.html" class="mobile-logo">
-    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+<!-- ═══════════════════════════════════
+     PAGE LOADER
+═══════════════════════════════════ -->
+<div id="page-loader">
+  <div class="loader-curtain"></div>
+  <div class="loader-inner">
+    <div class="loader-icon">🌿</div>
+    <div class="loader-brand">Stackly<em>Farm</em></div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-tag">Agriculture &amp; Smart Farming</div>
+    <div class="loader-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MOBILE HEADER  (shared classes)
+═══════════════════════════════════ -->
+<div class="site-mobile-header">
+  <a href="index.html" class="site-mobile-logo">
+    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Farm">
   </a>
-  <button class="hamburger" aria-label="Open menu">
+  <button class="site-hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </div>
-<div class="mobile-menu" role="dialog" aria-modal="true">
-  <div class="mobile-menu-inner">
-    <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
-    <nav class="mobile-nav">
+
+<div class="site-mobile-menu" role="dialog" aria-modal="true">
+  <div class="site-mobile-menu-inner">
+    <button class="site-close-menu" aria-label="Close menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="site-mobile-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="service.html">Services</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
-    <div class="mobile-buttons">
+    <div class="site-mobile-buttons">
       <a href="login.html" class="btn-signin">Sign In</a>
       <a href="register.html" class="btn-register">Register</a>
     </div>
   </div>
 </div>
 
-<!-- DESKTOP HEADER -->
-<header id="header">
-  <nav class="navbar">
-    <a href="index.html" class="logo">
-      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+<!-- ═══════════════════════════════════
+     DESKTOP HEADER  (shared classes)
+═══════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <nav class="site-navbar">
+    <a href="index.html" class="site-logo">
+      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Farm">
     </a>
-    <ul class="nav-links">
+    <ul class="site-nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="service.html">Services</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
-    <div class="auth-buttons">
+    <div class="site-auth-buttons">
       <a href="login.html" class="btn-nav">Sign In</a>
       <a href="register.html" class="btn-nav solid">Register</a>
     </div>
   </nav>
 </header>
 
-<!-- ═══ BANNER ═══ -->
-<section class="page-banner">
-  <div class="banner-bg"></div>
-  <div class="banner-overlay"></div>
-  <div class="banner-grid-lines"></div>
-  <div class="banner-content">
-    <span class="banner-eyebrow"><i class="fa-solid fa-headset"></i> We're Here to Help</span>
-    <h1>Contact<br><em>Us</em></h1>
-    <p>Get connected with our agriculture experts.</p>
+<!-- ═══════════════════════════════════
+     HERO BANNER
+═══════════════════════════════════ -->
+<section class="contact-banner">
+  <div class="cb-bg"></div>
+  <div class="cb-overlay"></div>
+  <div class="cb-grid"></div>
+
+  <!-- Floating particle dots -->
+  <div class="cb-particles" aria-hidden="true">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
   </div>
-  <div class="banner-scroll">
-    <div class="scroll-orb"></div>
+
+  <div class="cb-content">
+    <span class="cb-eyebrow reveal-up">
+      <i class="fa-solid fa-headset"></i> We're Here to Help
+    </span>
+    <h1 class="cb-title reveal-up" style="--d:.1s">
+      Contact<br><em>Us</em>
+    </h1>
+    <p class="cb-sub reveal-up" style="--d:.2s">
+      Get connected with our agriculture experts — we respond within 24 hours.
+    </p>
+
+    <!-- Breadcrumb -->
+    <nav class="cb-breadcrumb reveal-up" style="--d:.3s" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>Contact</span>
+    </nav>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="cb-scroll-cue" aria-hidden="true">
+    <div class="cb-orb"></div>
   </div>
 </section>
 
-<!-- ═══ CONTACT SECTION ═══ -->
+<!-- ═══════════════════════════════════
+     STATS STRIP
+═══════════════════════════════════ -->
+<div class="stats-strip">
+  <div class="stat-item reveal-up" style="--d:0s">
+    <strong class="count-up" data-target="24">19</strong><sup>h</sup>
+    <span>Response Time</span>
+  </div>
+  <div class="stat-item reveal-up" style="--d:.1s">
+    <strong class="count-up" data-target="4800">4591</strong><sup>+</sup>
+    <span>Farmers Helped</span>
+  </div>
+  <div class="stat-item reveal-up" style="--d:.2s">
+    <strong class="count-up" data-target="12">10</strong><sup>+</sup>
+    <span>States Covered</span>
+  </div>
+  <div class="stat-item reveal-up" style="--d:.3s">
+    <strong class="count-up" data-target="98">89</strong><sup>%</sup>
+    <span>Satisfaction Rate</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CONTACT SECTION
+═══════════════════════════════════ -->
 <section class="contact-section">
-  <div class="contact-info">
-    <div class="info-header">
-      <span class="info-tag">Let's Talk</span>
+
+  <!-- LEFT — Info panel -->
+  <div class="contact-info reveal-left">
+    <div class="ci-glow" aria-hidden="true"></div>
+
+    <div class="ci-header">
+      <span class="sec-label light">Let's Talk</span>
       <h2>Connect With Our<br><em>Farm Experts</em></h2>
-      <p>We help farmers and agriculture industries with modern solutions. Reach out — we respond within 24 hours.</p>
+      <p>
+        We help farmers and agri-businesses modernise with
+        smart, sustainable solutions. Drop us a line — our
+        experts are ready to guide you.
+      </p>
     </div>
-    <div class="about-points">
-      <div class="point">
-        <div class="point-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="point-text">
+
+    <!-- Contact cards -->
+    <div class="ci-cards" data-stagger="0.08">
+
+      <a href="mailto:hello@stackly.com" class="ci-card">
+        <div class="ci-card-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="ci-card-body">
           <strong>Email Us</strong>
           <span>hello@stackly.com</span>
         </div>
-      </div>
-      <div class="point">
-        <div class="point-icon"><i class="fa-solid fa-phone"></i></div>
-        <div class="point-text">
+        <div class="ci-card-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <a href="tel:+919888155661" class="ci-card">
+        <div class="ci-card-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="ci-card-body">
           <strong>Call Us</strong>
           <span>+91 98881 55661</span>
         </div>
-      </div>
-      <div class="point">
-        <div class="point-icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="point-text">
+        <div class="ci-card-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <div class="ci-card">
+        <div class="ci-card-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="ci-card-body">
           <strong>Visit Us</strong>
           <span>Bangalore, Karnataka, India</span>
         </div>
-      </div>
-      <div class="point">
-        <div class="point-icon"><i class="fa-solid fa-clock"></i></div>
-        <div class="point-text">
-          <strong>Working Hours</strong>
-          <span>Mon–Sat, 9AM–6PM IST</span>
+        <div class="ci-card-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
         </div>
       </div>
-    </div>
-  </div>
 
-  <form class="contact-form">
-    <div class="form-header">
+      <div class="ci-card">
+        <div class="ci-card-icon">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <div class="ci-card-body">
+          <strong>Working Hours</strong>
+          <span>Mon–Sat &nbsp;·&nbsp; 9 AM – 6 PM IST</span>
+        </div>
+        <div class="ci-card-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+    </div><!-- /ci-cards -->
+
+    <!-- Social row -->
+    <div class="ci-social">
+      <p>Follow Us</p>
+      <div class="ci-social-icons">
+        <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div><!-- /contact-info -->
+
+  <!-- RIGHT — Form panel -->
+  <div class="contact-form-wrap reveal-right">
+
+    <!-- Decorative corner accent -->
+    <div class="form-accent" aria-hidden="true"></div>
+
+    <div class="cf-header">
       <h3>Send Us a Message</h3>
       <p>We'll get back to you within one business day.</p>
     </div>
-    <div class="form-group">
-      <label>Your Name</label>
-      <input type="text" placeholder="John Doe">
+
+    <form class="cf-form" id="contactForm" novalidate>
+
+      <div class="cf-row">
+        <div class="cf-group">
+          <label for="cf-name">Your Name</label>
+          <div class="cf-input-wrap">
+            <i class="fa-solid fa-user cf-icon"></i>
+            <input id="cf-name" type="text" placeholder="John Doe" required>
+          </div>
+          <span class="cf-error">Please enter your name.</span>
+        </div>
+
+        <div class="cf-group">
+          <label for="cf-email">Email Address</label>
+          <div class="cf-input-wrap">
+            <i class="fa-solid fa-envelope cf-icon"></i>
+            <input id="cf-email" type="email" placeholder="john@example.com" required>
+          </div>
+          <span class="cf-error">Please enter a valid email.</span>
+        </div>
+      </div>
+
+      <div class="cf-group">
+        <label for="cf-phone">Phone Number <em>(optional)</em></label>
+        <div class="cf-input-wrap">
+          <i class="fa-solid fa-phone cf-icon"></i>
+          <input id="cf-phone" type="tel" placeholder="+91 00000 00000">
+        </div>
+      </div>
+
+      <div class="cf-group">
+        <label for="cf-subject">Subject</label>
+        <div class="cf-input-wrap cf-select-wrap">
+          <i class="fa-solid fa-tag cf-icon"></i>
+          <select id="cf-subject">
+            <option value="" disabled selected>Select a topic…</option>
+            <option>Organic Farming Advice</option>
+            <option>Smart Agriculture Solutions</option>
+            <option>Crop Management</option>
+            <option>Modern Equipment</option>
+            <option>AI &amp; Analytics</option>
+            <option>General Enquiry</option>
+          </select>
+          <i class="fa-solid fa-chevron-down cf-chevron"></i>
+        </div>
+      </div>
+
+      <div class="cf-group">
+        <label for="cf-message">Your Message</label>
+        <div class="cf-input-wrap cf-textarea-wrap">
+          <textarea id="cf-message" placeholder="How can we help you?" required rows="5"></textarea>
+          <span class="cf-char-count" id="charCount">0 / 500</span>
+        </div>
+        <span class="cf-error">Please write a message.</span>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="cf-submit" id="cfSubmit">
+        <span class="cf-submit-text">Send Message</span>
+        <span class="cf-submit-icon"><i class="fa-solid fa-paper-plane"></i></span>
+        <span class="cf-submit-loader" aria-hidden="true">
+          <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+      </button>
+
+    </form>
+
+    <!-- Success state -->
+    <div class="cf-success" id="cfSuccess">
+      <div class="cf-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h4>Message Sent!</h4>
+      <p>Thank you — we'll be in touch within one business day.</p>
+      <button class="cf-reset" id="cfReset">Send Another Message</button>
     </div>
-    <div class="form-group">
-      <label>Email Address</label>
-      <input type="email" placeholder="john@example.com">
-    </div>
-    <div class="form-group">
-      <label>Your Message</label>
-      <textarea placeholder="How can we help you?"></textarea>
-    </div>
-    <button type="submit" class="form-submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-  </form>
+
+  </div><!-- /contact-form-wrap -->
+
 </section>
 
-<!-- ═══ MAP ═══ -->
+<!-- ═══════════════════════════════════
+     MAP
+═══════════════════════════════════ -->
 <section class="map-section">
-  <iframe src="https://www.google.com/maps?q=Bangalore,Karnataka,India&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="map-label">
+    <i class="fa-solid fa-location-dot"></i>
+    Bangalore, Karnataka, India
+  </div>
+  <iframe
+    src="https://www.google.com/maps?q=Bangalore,Karnataka,India&output=embed"
+    width="100%"
+    height="460"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Stackly Farm Location"
+  ></iframe>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer-top">
+<!-- ═══════════════════════════════════
+     FAQ STRIP
+═══════════════════════════════════ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-head reveal-up">
+      <span class="sec-label">Common Questions</span>
+      <h2 class="sec-title">Quick <em>Answers</em></h2>
+    </div>
+
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item reveal-up" style="--d:0s">
+        <button class="faq-q" aria-expanded="false">
+          How soon will I hear back after submitting?
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-a">
+          <p>Our team typically responds within 24 hours on business days. For urgent matters, call us directly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up" style="--d:.08s">
+        <button class="faq-q" aria-expanded="false">
+          Do you offer on-site farm consultations?
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-a">
+          <p>Yes! We visit farms across Karnataka and neighbouring states. Request a site visit in your message and our team will coordinate scheduling.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up" style="--d:.16s">
+        <button class="faq-q" aria-expanded="false">
+          What languages do your experts speak?
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-a">
+          <p>Our team is fluent in English, Kannada, Hindi, and Tamil, so we can assist farmers in their preferred language.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up" style="--d:.24s">
+        <button class="faq-q" aria-expanded="false">
+          Is the initial consultation free?
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-a">
+          <p>Absolutely. Your first consultation call is completely free. We'll assess your needs and recommend the best path forward.</p>
+        </div>
+      </div>
+
+    </div><!-- /faq-list -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FOOTER  (shared classes)
+═══════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="site-footer-top">
+
     <div class="footer-brand">
-      <a href="index.html"><img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly"></a>
-      <p>Premium agriculture solutions for smart farming, organic production, and sustainable future growth.</p>
-      <div class="social-row">
-        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      <a href="index.html">
+        <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Farm">
+      </a>
+      <p>Premium agriculture solutions for smart farming, organic production, and a sustainable future.</p>
+      <div class="footer-social-row">
+        <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
     </div>
-    <div class="footer-links-col">
+
+    <div class="footer-col">
       <h4>Navigation</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="service.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="footer-links-col">
+
+    <div class="footer-col">
       <h4>Services</h4>
-      <ul><li><a href="service.html">Organic Farming</a></li><li><a href="service.html">Smart Agriculture</a></li><li><a href="service.html">Crop Management</a></li><li><a href="service.html">Modern Equipment</a></li><li><a href="service.html">AI Analytics</a></li></ul>
+      <ul>
+        <li><a href="service.html">Organic Farming</a></li>
+        <li><a href="service.html">Smart Agriculture</a></li>
+        <li><a href="service.html">Crop Management</a></li>
+        <li><a href="service.html">Modern Equipment</a></li>
+        <li><a href="service.html">AI Analytics</a></li>
+      </ul>
     </div>
-    <div class="footer-links-col">
+
+    <div class="footer-col">
       <h4>Contact</h4>
-      <ul class="contact-list">
+      <ul class="footer-contact-list">
         <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</li>
         <li><i class="fa-solid fa-phone"></i> +91 98881 55661</li>
         <li><i class="fa-solid fa-envelope"></i> hello@stackly.com</li>
-        <li><i class="fa-solid fa-clock"></i> Mon–Sat, 9AM–6PM IST</li>
+        <li><i class="fa-solid fa-clock"></i> Mon–Sat, 9 AM–6 PM IST</li>
       </ul>
     </div>
+
   </div>
-  <div class="footer-bottom">
+
+  <div class="site-footer-bottom">
     <p>© 2026 Stackly Farm. All Rights Reserved.</p>
     <p>Smart Agriculture Solutions</p>
   </div>
 </footer>
 
+<!-- ═══════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════ -->
+<script src="shared.js"></script>
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const closeMenu = document.querySelector('.close-menu');
-  hamburger?.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
-  closeMenu?.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); });
-  mobileMenu?.addEventListener('click', (e) => { if(e.target===mobileMenu){ hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); } });
-  window.addEventListener('scroll', () => { document.getElementById('header')?.classList.toggle('scrolled', window.scrollY > 60); });
+/* ── Contact-page specific JS ── */
+(function () {
 
-  // Form inputs focus effect
-  document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
-    input.addEventListener('focus', () => input.parentElement.classList.add('focused'));
-    input.addEventListener('blur', () => input.parentElement.classList.remove('focused'));
+  /* ── Char counter ── */
+  const msg      = document.getElementById('cf-message');
+  const counter  = document.getElementById('charCount');
+  if (msg && counter) {
+    msg.addEventListener('input', () => {
+      const len = msg.value.length;
+      counter.textContent = len + ' / 500';
+      if (len > 500) msg.value = msg.value.slice(0, 500);
+    });
+  }
+
+  /* ── Form submit ── */
+  const form    = document.getElementById('contactForm');
+  const btn     = document.getElementById('cfSubmit');
+  const success = document.getElementById('cfSuccess');
+  const reset   = document.getElementById('cfReset');
+
+  function setLoading(on) {
+    btn.classList.toggle('loading', on);
+    btn.disabled = on;
+  }
+
+  function validate() {
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(el => {
+      const group = el.closest('.cf-group');
+      const empty = !el.value.trim();
+      const badEmail = el.type === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+      group?.classList.toggle('has-error', empty || badEmail);
+      if (empty || badEmail) ok = false;
+    });
+    return ok;
+  }
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    setLoading(true);
+    /* Simulate async — replace with real fetch() call */
+    setTimeout(() => {
+      setLoading(false);
+      form.classList.add('hidden');
+      success.classList.add('visible');
+    }, 1800);
   });
+
+  reset?.addEventListener('click', () => {
+    form.reset();
+    if (counter) counter.textContent = '0 / 500';
+    form.querySelectorAll('.has-error').forEach(g => g.classList.remove('has-error'));
+    form.classList.remove('hidden');
+    success.classList.remove('visible');
+  });
+
+  /* Clear errors on input */
+  form?.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('input', () => {
+      el.closest('.cf-group')?.classList.remove('has-error');
+    });
+  });
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      /* Close all */
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      document.querySelectorAll('.faq-q').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      /* Toggle clicked */
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+})();
 </script>
+
 </body>
 </html>

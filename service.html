@@ -4,67 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services — Stackly Farm</title>
+  <link rel="stylesheet" href="shared.css">
   <link rel="stylesheet" href="service.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- MOBILE HEADER -->
-<div class="mobile-header">
-  <a href="index.html" class="mobile-logo">
-    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
-  </a>
-  <button class="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+<!-- ══ PAGE LOADER ══ -->
+<div id="page-loader">
+  <div class="loader-curtain"></div>
+  <div class="loader-inner">
+    <div class="loader-icon">🌾</div>
+    <div class="loader-brand">Stack<em>ly</em></div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-tag">Future of Agriculture</div>
+    <div class="loader-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
 </div>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" role="dialog" aria-modal="true">
-  <div class="mobile-menu-inner">
-    <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
-    <nav class="mobile-nav">
+<!-- ══ DESKTOP HEADER ══ -->
+<header class="site-header" id="siteHeader">
+  <nav class="site-navbar">
+    <a href="index.html" class="site-logo">
+      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+    </a>
+    <div class="site-nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="service.html" class="active">Services</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
-    </nav>
-    <div class="mobile-buttons">
-      <a href="login.html" class="btn-signin">Sign In</a>
-      <a href="register.html" class="btn-register">Register</a>
     </div>
-  </div>
-</div>
-
-<!-- DESKTOP HEADER -->
-<header id="header">
-  <nav class="navbar">
-    <a href="index.html" class="logo">
-      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="service.html" class="active">Services</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="auth-buttons">
+    <div class="site-auth-buttons">
       <a href="login.html" class="btn-nav">Sign In</a>
       <a href="register.html" class="btn-nav solid">Register</a>
     </div>
   </nav>
 </header>
 
+<!-- ══ MOBILE HEADER ══ -->
+<div class="site-mobile-header">
+  <a href="index.html" class="site-mobile-logo">
+    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+  </a>
+  <button class="site-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="site-mobile-menu" role="dialog" aria-modal="true">
+  <div class="site-mobile-menu-inner">
+    <div class="site-close-menu"><i class="fa-solid fa-xmark"></i></div>
+    <nav class="site-mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html" class="active">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="site-mobile-buttons">
+      <a href="login.html" class="btn-signin">Sign In</a>
+      <a href="register.html" class="btn-register">Register</a>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ HERO ═══ -->
 <section class="srv-hero">
   <div class="hero-bg-image"></div>
   <div class="hero-vignette"></div>
   <div class="hero-lines"></div>
-  <div class="srv-hero-inner"><br>
-    <br><br><br><br>
+  <div class="srv-hero-inner">
+    <br><br><br><br><br>
     <div class="hero-tag"><span class="tag-dot"></span> Agriculture Services</div>
     <h1>Where Nature Meets<br><em>Smart Farming</em></h1>
     <p>Six cutting-edge agriculture services designed to maximise your yield, reduce costs, and keep the earth healthy for generations.</p>
@@ -74,6 +91,7 @@
     </div>
     <div class="hero-stats-row">
       <div class="hstat">
+        
         <span class="hstat-num">12,000<sup>+</sup></span>
         <span class="hstat-label">Farmers Served</span>
       </div>
@@ -115,15 +133,14 @@
 
 <!-- ═══ SERVICES ═══ -->
 <section class="services-section" id="services">
-  <div class="section-head">
+  <div class="section-head reveal-up">
     <div class="sh-eyebrow"><i class="fa-solid fa-grid-2"></i> What We Offer</div>
     <h2>Our Agriculture<br>Services</h2>
     <p>From organic soil care to drone-powered crop monitoring — every solution built for Indian farms.</p>
   </div>
 
   <div class="services-grid">
-
-    <article class="srv-card">
+    <article class="srv-card reveal-up" style="--delay:0s">
       <div class="srv-card-img">
         <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=900" alt="Organic Farming">
         <div class="srv-tag">Eco Friendly</div>
@@ -137,7 +154,7 @@
       </div>
     </article>
 
-    <article class="srv-card card-accent-2">
+    <article class="srv-card card-accent-2 reveal-up" style="--delay:.1s">
       <div class="srv-card-img">
         <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?fm=webp&q=80&w=900" alt="Smart Equipment">
         <div class="srv-tag">IoT Powered</div>
@@ -151,7 +168,7 @@
       </div>
     </article>
 
-    <article class="srv-card card-accent-3">
+    <article class="srv-card card-accent-3 reveal-up" style="--delay:.2s">
       <div class="srv-card-img">
         <img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?fm=webp&q=80&w=900" alt="Weather Monitoring">
         <div class="srv-tag">Real-time</div>
@@ -165,7 +182,7 @@
       </div>
     </article>
 
-    <article class="srv-card card-accent-4">
+    <article class="srv-card card-accent-4 reveal-up" style="--delay:.3s">
       <div class="srv-card-img">
         <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=900" alt="Soil Testing">
         <div class="srv-tag">Lab Grade</div>
@@ -179,7 +196,7 @@
       </div>
     </article>
 
-    <article class="srv-card card-accent-5">
+    <article class="srv-card card-accent-5 reveal-up" style="--delay:.4s">
       <div class="srv-card-img">
         <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?fm=webp&q=80&w=900" alt="Crop Monitoring">
         <div class="srv-tag">Drone Powered</div>
@@ -193,7 +210,7 @@
       </div>
     </article>
 
-    <article class="srv-card card-accent-6">
+    <article class="srv-card card-accent-6 reveal-up" style="--delay:.5s">
       <div class="srv-card-img">
         <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?fm=webp&q=80&w=900" alt="Greenhouse Farming">
         <div class="srv-tag">Climate Controlled</div>
@@ -206,36 +223,35 @@
         <a href="#" class="srv-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </article>
-
   </div>
 </section>
 
 <!-- ═══ PROCESS ═══ -->
 <section class="process-section">
-  <div class="section-head light">
+  <div class="section-head light reveal-up">
     <div class="sh-eyebrow"><i class="fa-solid fa-route"></i> How It Works</div>
     <h2>Simple. Effective.<br>Proven.</h2>
   </div>
   <div class="process-steps">
-    <div class="process-step">
+    <div class="process-step reveal-up" style="--delay:0s">
       <div class="step-num">01</div>
       <h4>Consultation</h4>
       <p>We assess your land, crop type, and goals to build a personalised roadmap.</p>
     </div>
     <div class="process-connector"><i class="fa-solid fa-arrow-right"></i></div>
-    <div class="process-step">
+    <div class="process-step reveal-up" style="--delay:.15s">
       <div class="step-num">02</div>
       <h4>Implementation</h4>
       <p>Our agri-tech team deploys sensors, equipment, and software on your farm.</p>
     </div>
     <div class="process-connector"><i class="fa-solid fa-arrow-right"></i></div>
-    <div class="process-step">
+    <div class="process-step reveal-up" style="--delay:.3s">
       <div class="step-num">03</div>
       <h4>Monitoring</h4>
       <p>Real-time dashboards track every metric. We alert you before problems occur.</p>
     </div>
     <div class="process-connector"><i class="fa-solid fa-arrow-right"></i></div>
-    <div class="process-step">
+    <div class="process-step reveal-up" style="--delay:.45s">
       <div class="step-num">04</div>
       <h4>Growth</h4>
       <p>Season-on-season data insights drive continuous improvement and higher yields.</p>
@@ -243,9 +259,32 @@
   </div>
 </section>
 
+<!-- ═══ WHY US — STATS STRIP ═══ -->
+<section class="srv-stats-strip">
+  <div class="srv-stat-item reveal-up" style="--delay:0s">
+    <span class="srv-stat-num">12000 k<sup>+</sup></span>
+    <span class="srv-stat-label">Farmers Served</span>
+  </div>
+  <div class="srv-stat-divider"></div>
+  <div class="srv-stat-item reveal-up" style="--delay:.1s">
+    <span class="srv-stat-num">96<sup>%</sup></span>
+    <span class="srv-stat-label">Satisfaction Rate</span>
+  </div>
+  <div class="srv-stat-divider"></div>
+  <div class="srv-stat-item reveal-up" style="--delay:.2s">
+    <span class="srv-stat-num">40<sup>%</sup></span>
+    <span class="srv-stat-label">Avg Yield Boost</span>
+  </div>
+  <div class="srv-stat-divider"></div>
+  <div class="srv-stat-item reveal-up" style="--delay:.3s">
+    <span class="srv-stat-num">18</span>
+    <span class="srv-stat-label">States Active</span>
+  </div>
+</section>
+
 <!-- ═══ CTA ═══ -->
 <section class="cta-section">
-  <div class="cta-inner">
+  <div class="cta-inner reveal-scale">
     <div class="cta-bg-img"></div>
     <div class="cta-overlay"></div>
     <div class="cta-content">
@@ -257,21 +296,21 @@
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer-top">
+<!-- ══ SHARED FOOTER ══ -->
+<footer class="site-footer">
+  <div class="site-footer-top">
     <div class="footer-brand">
       <a href="index.html"><img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly"></a>
       <p>Premium agriculture solutions for smart farming, organic production, and sustainable future growth.</p>
-      <div class="social-row">
-        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      <div class="footer-social-row">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
       </div>
     </div>
-    <div class="footer-links-col">
+    <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -281,7 +320,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-    <div class="footer-links-col">
+    <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service.html">Organic Farming</a></li>
@@ -291,9 +330,9 @@
         <li><a href="service.html">AI Analytics</a></li>
       </ul>
     </div>
-    <div class="footer-links-col">
+    <div class="footer-col">
       <h4>Contact</h4>
-      <ul class="contact-list">
+      <ul class="footer-contact-list">
         <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</li>
         <li><i class="fa-solid fa-phone"></i> +91 98881 55661</li>
         <li><i class="fa-solid fa-envelope"></i> hello@stackly.com</li>
@@ -301,32 +340,113 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="site-footer-bottom">
     <p>© 2026 Stackly Farm. All Rights Reserved.</p>
     <p>Smart Agriculture Solutions</p>
   </div>
 </footer>
 
+<script src="shared.js"></script>
 <script>
-  // Mobile menu
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const closeMenu = document.querySelector('.close-menu');
-  hamburger?.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
-  closeMenu?.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); });
-  mobileMenu?.addEventListener('click', (e) => { if (e.target === mobileMenu) { hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); } });
+// Extra animation: stagger srv-cards
+document.querySelectorAll('.srv-card').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.1}s`;
+});
 
-  // Header scroll
-  window.addEventListener('scroll', () => {
-    document.getElementById('header')?.classList.toggle('scrolled', window.scrollY > 60);
+// Parallax on hero bg
+const heroBg = document.querySelector('.hero-bg-image');
+window.addEventListener('scroll', () => {
+  if (heroBg) heroBg.style.transform = `scale(1.07) translateY(${window.scrollY * 0.08}px)`;
+}, { passive: true });
+
+// Process step hover ripple
+document.querySelectorAll('.process-step').forEach(step => {
+  step.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-8px) scale(1.03)';
+  });
+  step.addEventListener('mouseleave', function() {
+    this.style.transform = '';
+  });
+});
+
+<!-- Counter Animation Script -->
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const counters = document.querySelectorAll(".srv-stat-num");
+
+  const animateCounter = (counter) => {
+
+    const text = counter.innerText.trim();
+
+    // Extract number
+    const target = parseFloat(text.replace(/[^\d.]/g, ""));
+    const hasPlus = text.includes("+");
+    const hasPercent = text.includes("%");
+
+    let count = 0;
+    const duration = 2000;
+    const increment = target / (duration / 16);
+
+    const update = () => {
+
+      count += increment;
+
+      if (count >= target) {
+        count = target;
+      }
+
+      let displayValue;
+
+      // Decimal handling
+      if (target % 1 !== 0) {
+        displayValue = count.toFixed(1);
+      } else {
+        displayValue = Math.floor(count);
+      }
+
+      // Add formatting
+      if (target >= 1000) {
+        displayValue = (displayValue / 1000).toFixed(
+          displayValue >= 10000 ? 0 : 1
+        ) + "K";
+      }
+
+      counter.innerHTML = `
+        ${displayValue}
+        ${hasPlus ? "<sup>+</sup>" : ""}
+        ${hasPercent ? "<sup>%</sup>" : ""}
+      `;
+
+      if (count < target) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    update();
+  };
+
+  // Intersection Observer
+  const observer = new IntersectionObserver((entries, obs) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => {
+    observer.observe(counter);
   });
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.srv-card, .process-step, .section-head');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => { el.classList.add('will-reveal'); io.observe(el); });
+});
 </script>
 </body>
 </html>

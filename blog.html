@@ -4,279 +4,382 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Stackly Farm</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="shared.css">
+  <!-- Page styles -->
   <link rel="stylesheet" href="blog.css">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- MOBILE HEADER -->
-<div class="mobile-header">
-  <a href="index.html" class="mobile-logo">
-    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+<!-- ═══════════════════════════════════
+     PAGE LOADER  (shared.css + shared.js)
+════════════════════════════════════ -->
+<div id="page-loader">
+  <div class="loader-curtain"></div>
+  <div class="loader-inner">
+    <span class="loader-icon">🌾</span>
+    <p class="loader-brand">Stackly <em>Farm</em></p>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <span class="loader-tag">Smart Agriculture</span>
+    <div class="loader-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     MOBILE HEADER  (shared.css)
+════════════════════════════════════ -->
+<div class="site-mobile-header">
+  <a href="index.html" class="site-mobile-logo">
+    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Farm">
   </a>
-  <button class="hamburger" aria-label="Open menu">
+  <button class="site-hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </div>
-<div class="mobile-menu" role="dialog" aria-modal="true">
-  <div class="mobile-menu-inner">
-    <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
-    <nav class="mobile-nav">
+
+<div class="site-mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="site-mobile-menu-inner">
+    <button class="site-close-menu" aria-label="Close menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="site-mobile-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="service.html">Services</a>
       <a href="blog.html" class="active">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="mobile-buttons">
-      <a href="login.html" class="btn-signin">Sign In</a>
-      <a href="register.html" class="btn-register">Register</a>
+    <div class="site-mobile-buttons">
+      <a href="login.html"    class="btn-signin">Sign In</a>
+      <a href="register.html" class="btn-register">Get Started</a>
     </div>
   </div>
 </div>
 
-<!-- DESKTOP HEADER -->
-<header id="header">
-  <nav class="navbar">
-    <a href="index.html" class="logo">
-      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+
+<!-- ═══════════════════════════════════
+     DESKTOP HEADER  (shared.css)
+════════════════════════════════════ -->
+<header class="site-header">
+  <nav class="site-navbar">
+    <a href="index.html" class="site-logo">
+      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Farm">
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="service.html">Services</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="auth-buttons">
-      <a href="login.html" class="btn-nav">Sign In</a>
-      <a href="register.html" class="btn-nav solid">Register</a>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="site-auth-buttons">
+      <a href="login.html"    class="btn-nav">Sign In</a>
+      <a href="register.html" class="btn-nav solid">Get Started</a>
     </div>
   </nav>
 </header>
 
-<!-- ═══ BLOG HERO ═══ -->
+
+<!-- ═══════════════════════════════════
+     HERO
+════════════════════════════════════ -->
 <section class="blog-hero">
   <div class="bh-bg"></div>
-  <div class="bh-noise"></div>
-  <div class="bh-vignette"></div>
+  <div class="bh-overlay"></div>
+
   <div class="bh-container">
+
+    <!-- Left -->
     <div class="bh-left">
-      <span class="bh-badge">📰 Smart Agriculture Insights</span>
+      <span class="bh-eyebrow">
+        <span class="dot"></span>
+        Smart Agriculture Insights
+      </span>
+
       <h1>Future Farming<br>Blog &amp; <em>Articles</em></h1>
-      <p>Explore modern agriculture trends, organic farming techniques, AI-powered farming systems, and smart irrigation innovations from our expert contributors.</p>
-      <div class="bh-btns">
-        <a href="#blog-posts" class="btn-primary">Read Articles</a>
-        <a href="#newsletter" class="btn-outline">Join Community</a>
+
+      <p>Explore modern agriculture trends, organic techniques, AI-powered farming systems, and smart irrigation innovations from our expert contributors.</p>
+
+      <div class="bh-buttons">
+        <a href="#blog-posts" class="cta-primary">
+          Read Articles
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#newsletter" class="cta-ghost">Join Community</a>
       </div>
     </div>
+
+    <!-- Right -->
     <div class="bh-right">
-      <div class="bh-img-frame">
-        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?fm=webp&q=80&w=1000" alt="Agriculture Blog">
-        <div class="bh-img-overlay"></div>
-      </div>
-      <div class="bh-float-pill">
-        <span class="pill-dot"></span>
-        <strong>5K+ Farmers Trust Stackly</strong>
+      <div class="bh-frame">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?fm=webp&q=80&w=1000" alt="Agriculture fields">
+        <div class="bh-frame-overlay"></div>
+        <div class="bh-pill">
+          <span class="pill-live"></span>
+          5K+ Farmers Trust Stackly
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ═══ FEATURED POST ═══ -->
+
+<!-- ═══════════════════════════════════
+     FEATURED ARTICLE
+════════════════════════════════════ -->
 <section class="blog-featured">
-  <div class="section-head">
-    <span class="section-badge"><i class="fa-solid fa-star"></i> Editor's Pick</span>
-    <h2>Featured Article</h2>
+  <div class="page-sec-head reveal-up">
+    <span class="sec-label">Editor's Pick</span>
+    <h2 class="sec-title">Featured <em>Article</em></h2>
   </div>
-  <div class="featured-card">
-    <div class="featured-img">
-      <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?fm=webp&q=80&w=1200" alt="Featured Blog">
-      <span class="featured-label">Featured</span>
-      <div class="featured-img-overlay"></div>
+
+  <div class="featured-card reveal-scale">
+    <div class="feat-img-wrap">
+      <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?fm=webp&q=80&w=1200" alt="AI in Indian Agriculture">
+      <span class="feat-badge">🌟 Featured</span>
+      <div class="feat-img-overlay"></div>
     </div>
-    <div class="featured-body">
-      <div class="blog-meta">
-        <span class="blog-cat">Technology</span>
-        <span class="blog-date"><i class="fa-regular fa-calendar"></i> May 12, 2026</span>
-        <span class="blog-read"><i class="fa-regular fa-clock"></i> 8 min read</span>
+    <div class="feat-body">
+      <div class="feat-meta">
+        <span class="feat-cat">Technology</span>
+        <span class="feat-date"><i class="fa-regular fa-calendar"></i> May 12, 2026</span>
+        <span class="feat-read"><i class="fa-regular fa-clock"></i> 8 min read</span>
       </div>
       <h2>How AI and IoT Are Transforming Indian Agriculture in 2026</h2>
       <p>From drone-based crop monitoring to AI-powered yield prediction, technology is reshaping how India's 140 million farming families work — reducing costs by 35% and boosting yields by up to 50%.</p>
-      <a href="#" class="btn-primary">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#" class="cta-primary">
+        Read Full Article
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══ BLOG POSTS ═══ -->
+
+<!-- ═══════════════════════════════════
+     BLOG GRID
+════════════════════════════════════ -->
 <section class="blog-posts" id="blog-posts">
-  <div class="section-head">
-    <span class="section-badge"><i class="fa-solid fa-newspaper"></i> Latest Articles</span>
-    <h2>From Our Blog</h2>
-    <p>Expert insights, practical tips, and agriculture news to help you grow smarter.</p>
+  <div class="page-sec-head reveal-up">
+    <span class="sec-label">Latest Articles</span>
+    <h2 class="sec-title">From Our <em>Blog</em></h2>
+    <p>Expert insights, practical tips, and agriculture news to help you grow smarter every season.</p>
   </div>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=700" alt="Organic">
-        <span class="blog-cat-tag">Organic</span>
-        <div class="card-overlay"></div>
+
+  <!-- data-stagger handled by shared.js -->
+  <div class="blog-grid" data-stagger="0.10">
+
+    <div class="blog-card reveal-up">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=700" alt="Organic farming">
+        <span class="card-tag">Organic</span>
+        <div class="card-scrim"></div>
       </div>
-      <div class="blog-card-body">
-        <div class="blog-meta">
-          <span class="blog-date"><i class="fa-regular fa-calendar"></i> May 8, 2026</span>
-          <span class="blog-read"><i class="fa-regular fa-clock"></i> 5 min</span>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-date"><i class="fa-regular fa-calendar"></i> May 8, 2026</span>
+          <span class="card-read"><i class="fa-regular fa-clock"></i> 5 min</span>
         </div>
         <h3>Top 10 Organic Farming Techniques for 2026</h3>
-        <p>Discover the most effective organic farming methods being adopted by successful farmers across India this season.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        <p>Discover the most effective organic methods being adopted by successful farmers across India this season.</p>
+        <a href="#" class="card-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
-    <div class="blog-card">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?fm=webp&q=80&w=700" alt="Irrigation">
-        <span class="blog-cat-tag tag-blue">Water</span>
-        <div class="card-overlay"></div>
+
+    <div class="blog-card reveal-up">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?fm=webp&q=80&w=700" alt="Smart irrigation">
+        <span class="card-tag blue">Water</span>
+        <div class="card-scrim"></div>
       </div>
-      <div class="blog-card-body">
-        <div class="blog-meta">
-          <span class="blog-date"><i class="fa-regular fa-calendar"></i> May 3, 2026</span>
-          <span class="blog-read"><i class="fa-regular fa-clock"></i> 6 min</span>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-date"><i class="fa-regular fa-calendar"></i> May 3, 2026</span>
+          <span class="card-read"><i class="fa-regular fa-clock"></i> 6 min</span>
         </div>
         <h3>Smart Irrigation: Save 40% Water Without Losing Yield</h3>
-        <p>How IoT-based drip irrigation systems are helping farmers in Rajasthan and Karnataka dramatically cut water usage.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        <p>How IoT-based drip systems are helping farmers in Rajasthan and Karnataka cut water usage dramatically.</p>
+        <a href="#" class="card-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
-    <div class="blog-card">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=700" alt="Soil">
-        <span class="blog-cat-tag tag-purple">Soil Science</span>
-        <div class="card-overlay"></div>
+
+    <div class="blog-card reveal-up">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=700" alt="Soil science">
+        <span class="card-tag purple">Soil Science</span>
+        <div class="card-scrim"></div>
       </div>
-      <div class="blog-card-body">
-        <div class="blog-meta">
-          <span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 28, 2026</span>
-          <span class="blog-read"><i class="fa-regular fa-clock"></i> 4 min</span>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-date"><i class="fa-regular fa-calendar"></i> Apr 28, 2026</span>
+          <span class="card-read"><i class="fa-regular fa-clock"></i> 4 min</span>
         </div>
         <h3>Why Soil Health is the Foundation of Profitable Farming</h3>
-        <p>Understanding your soil's microbiome can be the single biggest factor in improving crop quality and sustainability.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        <p>Understanding your soil's microbiome can be the single biggest factor in improving crop quality.</p>
+        <a href="#" class="card-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
-    <div class="blog-card">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=700" alt="Drones">
-        <span class="blog-cat-tag tag-orange">Technology</span>
-        <div class="card-overlay"></div>
+
+    <div class="blog-card reveal-up">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=700" alt="Agriculture drones">
+        <span class="card-tag orange">Technology</span>
+        <div class="card-scrim"></div>
       </div>
-      <div class="blog-card-body">
-        <div class="blog-meta">
-          <span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 20, 2026</span>
-          <span class="blog-read"><i class="fa-regular fa-clock"></i> 7 min</span>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-date"><i class="fa-regular fa-calendar"></i> Apr 20, 2026</span>
+          <span class="card-read"><i class="fa-regular fa-clock"></i> 7 min</span>
         </div>
         <h3>Drones in Agriculture: A Practical Guide for Indian Farmers</h3>
-        <p>From crop spraying to aerial mapping, agricultural drones are now affordable and accessible for farms of all sizes.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        <p>From crop spraying to aerial mapping — drones are now affordable for farms of all sizes.</p>
+        <a href="#" class="card-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
-    <div class="blog-card">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?fm=webp&q=80&w=700" alt="Climate">
-        <span class="blog-cat-tag tag-teal">Climate</span>
-        <div class="card-overlay"></div>
+
+    <div class="blog-card reveal-up">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?fm=webp&q=80&w=700" alt="Climate resilient farming">
+        <span class="card-tag teal">Climate</span>
+        <div class="card-scrim"></div>
       </div>
-      <div class="blog-card-body">
-        <div class="blog-meta">
-          <span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 15, 2026</span>
-          <span class="blog-read"><i class="fa-regular fa-clock"></i> 9 min</span>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-date"><i class="fa-regular fa-calendar"></i> Apr 15, 2026</span>
+          <span class="card-read"><i class="fa-regular fa-clock"></i> 9 min</span>
         </div>
         <h3>Climate-Resilient Farming: Adapting to India's Changing Monsoons</h3>
-        <p>Strategies and crop varieties helping India's farmers build resilience against unpredictable rainfall patterns.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        <p>Strategies and crop varieties helping farmers build resilience against unpredictable rainfall patterns.</p>
+        <a href="#" class="card-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
-    <div class="blog-card">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?fm=webp&q=80&w=700" alt="Greenhouse">
-        <span class="blog-cat-tag tag-pink">Greenhouse</span>
-        <div class="card-overlay"></div>
+
+    <div class="blog-card reveal-up">
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?fm=webp&q=80&w=700" alt="Greenhouse farming">
+        <span class="card-tag pink">Greenhouse</span>
+        <div class="card-scrim"></div>
       </div>
-      <div class="blog-card-body">
-        <div class="blog-meta">
-          <span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 8, 2026</span>
-          <span class="blog-read"><i class="fa-regular fa-clock"></i> 5 min</span>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-date"><i class="fa-regular fa-calendar"></i> Apr 8, 2026</span>
+          <span class="card-read"><i class="fa-regular fa-clock"></i> 5 min</span>
         </div>
         <h3>Is Greenhouse Farming Right for Your Land? A Cost Analysis</h3>
-        <p>Breaking down the real ROI of controlled-environment agriculture for small and mid-sized farms across India.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        <p>Breaking down the real ROI of controlled-environment agriculture for small and mid-sized farms.</p>
+        <a href="#" class="card-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ═══ NEWSLETTER ═══ -->
+
+<!-- ═══════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════ -->
 <section class="blog-newsletter" id="newsletter">
-  <div class="bln-bg"></div>
-  <div class="bln-inner">
-    <div class="bln-deco">🌱</div>
-    <h2>Subscribe to Our Newsletter</h2>
+  <div class="nl-bg"></div>
+  <div class="nl-inner reveal-scale">
+    <span class="nl-deco" aria-hidden="true">🌱</span>
+
+    <span class="sec-label light">Stay Updated</span>
+    <h2 class="sec-title">Subscribe to Our <em>Newsletter</em></h2>
     <p>Get agriculture updates and smart farming tips delivered directly to your inbox every week.</p>
-    <div class="bln-form">
-      <input type="email" placeholder="Enter your email address">
-      <button class="btn-primary" type="button">Subscribe <i class="fa-solid fa-paper-plane"></i></button>
+
+    <div class="nl-form">
+      <input type="email" id="nlEmail" placeholder="Enter your email address" autocomplete="email">
+      <button id="nlBtn" class="cta-primary">
+        Subscribe
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
     </div>
-    <p class="bln-note"><i class="fa-solid fa-shield-halved"></i> No spam, unsubscribe anytime. 5,000+ farmers already subscribed.</p>
+
+    <p class="nl-note">
+      <i class="fa-solid fa-shield-halved"></i>
+      No spam, unsubscribe anytime. 5,000+ farmers already subscribed.
+    </p>
+
+    <div id="nlSuccess">
+      <i class="fa-solid fa-circle-check"></i>
+      You're subscribed! Welcome to the Stackly community.
+    </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer-top">
+
+<!-- ═══════════════════════════════════
+     FOOTER  (shared.css)
+════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="site-footer-top">
+
     <div class="footer-brand">
-      <a href="index.html"><img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly"></a>
-      <p>Premium agriculture solutions for smart farming, organic production, and sustainable future growth.</p>
-      <div class="social-row">
-        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      <a href="index.html">
+        <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Farm">
+      </a>
+      <p>Premium agriculture solutions for smart farming, organic production, and a sustainable future.</p>
+      <div class="footer-social-row">
+        <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
     </div>
-    <div class="footer-links-col">
+
+    <div class="footer-col">
       <h4>Navigation</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="service.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="footer-links-col">
+
+    <div class="footer-col">
       <h4>Services</h4>
-      <ul><li><a href="service.html">Organic Farming</a></li><li><a href="service.html">Smart Agriculture</a></li><li><a href="service.html">Crop Management</a></li><li><a href="service.html">Modern Equipment</a></li><li><a href="service.html">AI Analytics</a></li></ul>
+      <ul>
+        <li><a href="service.html">Organic Farming</a></li>
+        <li><a href="service.html">Smart Agriculture</a></li>
+        <li><a href="service.html">Crop Management</a></li>
+        <li><a href="service.html">Modern Equipment</a></li>
+        <li><a href="service.html">AI Analytics</a></li>
+      </ul>
     </div>
-    <div class="footer-links-col">
+
+    <div class="footer-col">
       <h4>Contact</h4>
-      <ul class="contact-list">
+      <ul class="footer-contact-list">
         <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</li>
         <li><i class="fa-solid fa-phone"></i> +91 98881 55661</li>
         <li><i class="fa-solid fa-envelope"></i> hello@stackly.com</li>
         <li><i class="fa-solid fa-clock"></i> Mon–Sat, 9AM–6PM IST</li>
       </ul>
     </div>
+
   </div>
-  <div class="footer-bottom">
+  <div class="site-footer-bottom">
     <p>© 2026 Stackly Farm. All Rights Reserved.</p>
     <p>Smart Agriculture Solutions</p>
   </div>
 </footer>
 
-<script>
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const closeMenu = document.querySelector('.close-menu');
-  hamburger?.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
-  closeMenu?.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); });
-  mobileMenu?.addEventListener('click', (e) => { if(e.target===mobileMenu){ hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); } });
-  window.addEventListener('scroll', () => { document.getElementById('header')?.classList.toggle('scrolled', window.scrollY > 60); });
-</script>
+
+<!-- Shared JS (loader, header scroll, mobile menu, scroll-reveal, stagger, count-up, newsletter) -->
+<script src="shared.js"></script>
+
 </body>
 </html>

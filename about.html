@@ -4,68 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Stackly Farm</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared.css">
   <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="menu-overlay"></div>
+<!-- ══ PAGE LOADER ══ -->
+<div id="page-loader">
+  <div class="loader-curtain"></div>
+  <div class="loader-inner">
+    <div class="loader-icon">🌾</div>
+    <div class="loader-brand">Stack<em>ly</em></div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-tag">Future of Agriculture</div>
+    <div class="loader-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
 
 <!-- ══ DESKTOP HEADER ══ -->
-<header>
-  <nav class="navbar">
-    <div class="logo"><a href="index.html"><img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Farm"></a></div>
-    <button class="menu-toggle" aria-label="Open menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-    <ul class="nav-links">
-      <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="service.html">Services</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-     <li class="mobile-auth-li">
-        <a href="login.html" class="btn-nav">Sign In</a>
-        <a href="register.html" class="btn-nav solid">Register</a>
-      </li>
-    </ul>
-
-    <div class="auth-buttons">
+<header class="site-header" id="siteHeader">
+  <nav class="site-navbar">
+    <a href="index.html" class="site-logo">
+      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+    </a>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="service.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="site-auth-buttons">
       <a href="login.html" class="btn-nav">Sign In</a>
       <a href="register.html" class="btn-nav solid">Register</a>
     </div>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
   </nav>
 </header>
 
 <!-- ══ MOBILE HEADER ══ -->
-<div class="mobile-header">
-  <a href="index.html" class="mobile-logo">
+<div class="site-mobile-header">
+  <a href="index.html" class="site-mobile-logo">
     <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
   </a>
-  <button class="hamburger" aria-label="Open menu">
+  <button class="site-hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </div>
 
 <!-- ══ MOBILE MENU ══ -->
-<div class="mobile-menu" role="dialog" aria-modal="true">
-  <div class="mobile-menu-inner">
-    <div class="close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></div>
-    <nav class="mobile-nav">
+<div class="site-mobile-menu" role="dialog" aria-modal="true">
+  <div class="site-mobile-menu-inner">
+    <div class="site-close-menu"><i class="fa-solid fa-xmark"></i></div>
+    <nav class="site-mobile-nav">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
       <a href="service.html">Services</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="mobile-buttons">
+    <div class="site-mobile-buttons">
       <a href="login.html" class="btn-signin">Sign In</a>
       <a href="register.html" class="btn-register">Register</a>
     </div>
@@ -137,10 +140,10 @@
 <!-- MISSION/VISION -->
 <section class="mvs-section">
   <div class="section-head reveal-up"><span class="section-badge">Our Foundation</span><h2>Mission, Vision &amp; Story</h2><p>The principles that have guided every seed we've planted and every farmer we've served.</p></div>
-  <div class="mvs-grid stagger-children">
-    <div class="mvs-card"><div class="mvs-number">01</div><div class="mvs-icon-wrap story"><i class="fa-solid fa-book-open"></i></div><h3>Our Story</h3><p>Founded in Bangalore in 2002, AgroFarm started as a two-person consultancy helping local Karnataka farmers access better seeds and soil data. Today we power smart agriculture across 18 Indian states.</p><div class="mvs-line"></div></div>
-    <div class="mvs-card featured-card-mvs"><div class="mvs-number">02</div><div class="mvs-icon-wrap mission"><i class="fa-solid fa-bullseye"></i></div><h3>Our Mission</h3><p>To democratize precision agriculture — making modern tools and knowledge accessible to every farmer, regardless of farm size or digital literacy, so they can grow more with less.</p><div class="mvs-line"></div></div>
-    <div class="mvs-card"><div class="mvs-number">03</div><div class="mvs-icon-wrap vision"><i class="fa-solid fa-eye"></i></div><h3>Our Vision</h3><p>A world where Indian agriculture leads globally — not just in volume, but in sustainability, quality, and farmer well-being. We see technology and nature as partners, not opposites.</p><div class="mvs-line"></div></div>
+  <div class="mvs-grid" data-stagger="0.12">
+    <div class="mvs-card reveal-up"><div class="mvs-number">01</div><div class="mvs-icon-wrap story"><i class="fa-solid fa-book-open"></i></div><h3>Our Story</h3><p>Founded in Bangalore in 2002, AgroFarm started as a two-person consultancy helping local Karnataka farmers access better seeds and soil data. Today we power smart agriculture across 18 Indian states.</p><div class="mvs-line"></div></div>
+    <div class="mvs-card featured-card-mvs reveal-up"><div class="mvs-number">02</div><div class="mvs-icon-wrap mission"><i class="fa-solid fa-bullseye"></i></div><h3>Our Mission</h3><p>To democratize precision agriculture — making modern tools and knowledge accessible to every farmer, regardless of farm size or digital literacy, so they can grow more with less.</p><div class="mvs-line"></div></div>
+    <div class="mvs-card reveal-up"><div class="mvs-number">03</div><div class="mvs-icon-wrap vision"><i class="fa-solid fa-eye"></i></div><h3>Our Vision</h3><p>A world where Indian agriculture leads globally — not just in volume, but in sustainability, quality, and farmer well-being. We see technology and nature as partners, not opposites.</p><div class="mvs-line"></div></div>
   </div>
 </section>
 
@@ -148,11 +151,11 @@
 <section class="stats-section">
   <div class="stats-inner">
     <div class="stats-left reveal-left"><span class="section-badge">By The Numbers</span><h2>Two Decades of<br>Measurable Impact</h2><p>Every metric is independently verified and updated annually with data from our farm partner network.</p><a href="contact.html" class="btn-primary">Join Our Network <i class="fa-solid fa-arrow-right"></i></a></div>
-    <div class="stats-grid reveal-right stagger-children">
-      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-tractor"></i></div><h2 class="count-up">12000</h2><span>+</span><p>Farms Supported</p></div>
-      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-flask"></i></div><h2 class="count-up">500</h2><span>+</span><p>Projects Delivered</p></div>
-      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-star"></i></div><h2 class="count-up">95</h2><span>%</span><p>Satisfaction Rate</p></div>
-      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div><h2 class="count-up">18</h2><p>States Active</p></div>
+    <div class="stats-grid reveal-right" data-stagger="0.12">
+      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-tractor"></i></div><h2 class="count-up" data-target="12000">0</h2><span>+</span><p>Farms Supported</p></div>
+      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-flask"></i></div><h2 class="count-up" data-target="500">0</h2><span>+</span><p>Projects Delivered</p></div>
+      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-star"></i></div><h2 class="count-up" data-target="95">0</h2><span>%</span><p>Satisfaction Rate</p></div>
+      <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div><h2 class="count-up" data-target="18">0</h2><p>States Active</p></div>
     </div>
   </div>
 </section>
@@ -160,11 +163,11 @@
 <!-- TEAM -->
 <section class="team-section">
   <div class="section-head reveal-up"><span class="section-badge">Meet the Team</span><h2>The People Behind<br>Stackly Farm</h2><p>Agronomists, engineers, data scientists, and passionate farmers — all united by one mission.</p></div>
-  <div class="team-grid stagger-children">
-    <div class="team-card"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=webp&q=85&w=600" alt="Arjun Mehta"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div><div class="team-info"><h3>Arjun Mehta</h3><span>Founder & CEO</span><p>20+ years leading agri-tech ventures across South Asia.</p><div class="team-tags"><em>Leadership</em><em>Strategy</em><em>Policy</em></div></div></div>
-    <div class="team-card"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fm=webp&q=85&w=600" alt="Priya Nair"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div><div class="team-info"><h3>Priya Nair</h3><span>Chief Technology Officer</span><p>AI & IoT specialist. Built Stackly's proprietary crop intelligence platform.</p><div class="team-tags"><em>AI/ML</em><em>IoT</em><em>Engineering</em></div></div></div>
-    <div class="team-card"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?fm=webp&q=85&w=600" alt="Kavitha Reddy"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="team-info"><h3>Kavitha Reddy</h3><span>Head of Agronomy</span><p>PhD in Agricultural Science from IISc. Leads our soil health research programs.</p><div class="team-tags"><em>Research</em><em>Soil Science</em><em>Crops</em></div></div></div>
-    <div class="team-card"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=webp&q=85&w=600" alt="Ravi Kumar"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="team-info"><h3>Ravi Kumar</h3><span>Head of Farmer Relations</span><p>Former farmer and grassroots advocate who bridges tech and field realities.</p><div class="team-tags"><em>Community</em><em>Training</em><em>Outreach</em></div></div></div>
+  <div class="team-grid" data-stagger="0.1">
+    <div class="team-card reveal-up"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=webp&q=85&w=600" alt="Arjun Mehta"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a></div></div><div class="team-info"><h3>Arjun Mehta</h3><span>Founder & CEO</span><p>20+ years leading agri-tech ventures across South Asia.</p><div class="team-tags"><em>Leadership</em><em>Strategy</em><em>Policy</em></div></div></div>
+    <div class="team-card reveal-up"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fm=webp&q=85&w=600" alt="Priya Nair"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div><div class="team-info"><h3>Priya Nair</h3><span>Chief Technology Officer</span><p>AI & IoT specialist. Built Stackly's proprietary crop intelligence platform.</p><div class="team-tags"><em>AI/ML</em><em>IoT</em><em>Engineering</em></div></div></div>
+    <div class="team-card reveal-up"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?fm=webp&q=85&w=600" alt="Kavitha Reddy"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="team-info"><h3>Kavitha Reddy</h3><span>Head of Agronomy</span><p>PhD in Agricultural Science from IISc. Leads our soil health research programs.</p><div class="team-tags"><em>Research</em><em>Soil Science</em><em>Crops</em></div></div></div>
+    <div class="team-card reveal-up"><div class="team-img-wrap"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=webp&q=85&w=600" alt="Ravi Kumar"><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="team-info"><h3>Ravi Kumar</h3><span>Head of Farmer Relations</span><p>Former farmer and grassroots advocate who bridges tech and field realities.</p><div class="team-tags"><em>Community</em><em>Training</em><em>Outreach</em></div></div></div>
   </div>
 </section>
 
@@ -189,35 +192,48 @@
       <span class="section-badge" style="background:rgba(245,240,232,.15);border-color:rgba(245,240,232,.25);color:var(--cream)">Ready to Start?</span>
       <h2>Grow Smarter<br>With Stackly</h2>
       <p>Join thousands of farmers who've transformed their fields with science, technology, and community support.</p>
-      <div class="acta-btns"><a href="contact.html" class="btn-white">Contact Us Today</a><a href="404.html" class="btn-outline">Explore Services</a></div>
+      <div class="acta-btns"><a href="contact.html" class="btn-white">Contact Us Today</a><a href="service.html" class="btn-outline">Explore Services</a></div>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-top">
+<!-- ══ SHARED FOOTER ══ -->
+<footer class="site-footer">
+  <div class="site-footer-top">
     <div class="footer-brand">
       <a href="index.html"><img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly"></a>
       <p>Premium agriculture solutions for smart farming, organic production, and sustainable future growth.</p>
-      <div class="social-row">
-        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      <div class="footer-social-row">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
       </div>
     </div>
-    <div class="footer-links-col">
+    <div class="footer-col">
       <h4>Navigation</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="service.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="footer-links-col">
+    <div class="footer-col">
       <h4>Services</h4>
-      <ul><li><a href="service.html">Organic Farming</a></li><li><a href="service.html">Smart Agriculture</a></li><li><a href="service.html">Crop Management</a></li><li><a href="service.html">Modern Equipment</a></li><li><a href="service.html">AI Analytics</a></li></ul>
+      <ul>
+        <li><a href="service.html">Organic Farming</a></li>
+        <li><a href="service.html">Smart Agriculture</a></li>
+        <li><a href="service.html">Crop Management</a></li>
+        <li><a href="service.html">Modern Equipment</a></li>
+        <li><a href="service.html">AI Analytics</a></li>
+      </ul>
     </div>
-    <div class="footer-links-col">
+    <div class="footer-col">
       <h4>Contact</h4>
-      <ul class="contact-list">
+      <ul class="footer-contact-list">
         <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</li>
         <li><i class="fa-solid fa-phone"></i> +91 98881 55661</li>
         <li><i class="fa-solid fa-envelope"></i> hello@stackly.com</li>
@@ -225,13 +241,13 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="site-footer-bottom">
     <p>© 2026 Stackly Farm. All Rights Reserved.</p>
     <p>Smart Agriculture Solutions</p>
   </div>
 </footer>
 
+<script src="shared.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
