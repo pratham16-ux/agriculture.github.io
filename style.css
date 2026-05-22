@@ -1877,3 +1877,75 @@ input[type="search"],
 textarea {
   cursor: text !important;
 }
+
+
+
+/* ═══════════════════════════════════════
+   FOOTER WRAPPER FIX
+   Paste this at the BOTTOM of style.css
+   (it will override all previous footer rules)
+═══════════════════════════════════════ */
+
+.footer {
+  width: 100%;
+  background: var(--dark2);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 8% 0;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right,
+    rgba(181,229,106,0.08),
+    transparent 55%);
+  pointer-events: none;
+}
+
+/* ── Remove max-width wrapper — full bleed ── */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 60px;
+  max-width: none;       /* ← removes the wrapper */
+  margin: 0;             /* ← removes auto centering */
+  padding: 0 0 60px;     /* ← uses footer's own padding */
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.footer-bottom {
+  max-width: none;       /* ← removes the wrapper */
+  margin: 0;             /* ← removes auto centering */
+  padding: 24px 0;       /* ← uses footer's own padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,.07);
+  color: rgba(255,255,255,.3);
+  font-size: 13px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .footer { padding: 60px 6% 0; }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .footer-brand { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .footer-brand p { max-width: 100%; }
+  .social-row { justify-content: center; }
+  .footer-links-col { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .footer-links-col ul { align-items: center; }
+  .footer-links-col a:hover { padding-left: 0; }
+  .contact-list { align-items: center; }
+  .contact-list li { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .footer { padding: 50px 5% 0; }
+}

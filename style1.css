@@ -47,7 +47,7 @@
 
   /* ── GLASS / CARD SURFACES ── */
   --card-bg:       #ffffff;
-  --card-bg-alt:   rgba(255,255,255,.75);
+  --card-bg-alt:   rgba(255, 255, 255, 0.75);
   --card-border:   rgba(90,158,111,.14);
   --card-border-hover: rgba(14,165,160,.35);
   --surface-1:     rgba(90,158,111,.05);
@@ -124,7 +124,7 @@ body::before {
   z-index: 300;
   transition: transform var(--transition);
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   box-shadow: 2px 0 20px rgba(26,46,30,.06);
 }
 
@@ -153,7 +153,7 @@ body::before {
 }
 
 .sb-logo img {
-  height: 65px;
+  height: 70px;
   width: auto;
   object-fit: contain;
 }
@@ -180,29 +180,29 @@ body::before {
 
 .sb-user strong {
   display: flex;
-  font-size: .88rem;
+  font-size: .80rem;
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .sb-user span {
-  font-size: .72rem;
+  font-size: .82rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Sidebar Nav */
 .sb-nav {
   padding: 10px 12px;
-  flex: 1;
+  flex: 2;
 }
 
 .sb-section-label {
-  font-size: .65rem;
-  font-weight: 700;
+  font-size: .55rem;
+  font-weight: 400;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding: 12px 10px 6px;
 }
 
@@ -214,7 +214,7 @@ body::before {
   border-radius: var(--radius-xs);
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: .85rem;
+  font-size: .70rem;
   font-weight: 500;
   transition: var(--transition);
   margin-bottom: 2px;
@@ -224,8 +224,8 @@ body::before {
 }
 
 .sb-nav a i {
-  font-size: .88rem;
-  width: 18px;
+  font-size: .78rem;
+  width: 16px;
   text-align: center;
   flex-shrink: 0;
 }
@@ -252,7 +252,7 @@ body::before {
   margin-left: auto;
   background: linear-gradient(135deg, var(--rose-400), #be123c);
   color: #fff;
-  font-size: .63rem;
+  font-size: .53rem;
   font-weight: 700;
   padding: 2px 7px;
   border-radius: 20px;
@@ -1423,4 +1423,177 @@ body::before {
   .topbar { padding: 0 10px; }
   .auth-form-wrap { padding: 24px 16px; }
   .health-grid { grid-template-columns: 1fr; }
+}
+
+/* ── USER INFO: desktop = topbar, mobile = sidebar ── */
+
+/* Hide sidebar user block on desktop */
+.sb-user {
+  display: none;
+}
+
+/* Show topbar email on desktop */
+.topbar-email {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  /* Show user block in sidebar on mobile */
+  .sb-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--card-border);
+    background: var(--surface-1);
+  }
+
+  .sb-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage-400), var(--teal-400));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .sb-user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .sb-user strong {
+    font-size: .88rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sb-user span {
+    font-size: .72rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Hide email from topbar on mobile */
+  .topbar-email {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════
+   ADD THESE STYLES TO YOUR style1.css
+   (Sidebar user info block — mobile fix)
+═══════════════════════════════════════ */
+
+.sb-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 8px;
+}
+
+.sb-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--electric, #00f5d4), #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #07101a;
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(0,245,212,0.25);
+}
+
+.sb-user-info {
+  overflow: hidden;
+}
+
+.sb-user-name {
+  color: var(--text-primary, #e2eaf4);
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sb-user-email {
+  color: var(--text-muted, #4d6a8a);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ═══════════════════════════════════════
+   ADD THESE STYLES TO YOUR style1.css
+   (Sidebar user info block — mobile fix)
+═══════════════════════════════════════ */
+
+.sb-user {
+  display: none; /* hidden on desktop by default */
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 8px;
+}
+
+/* Only show sidebar user block on mobile */
+@media (max-width: 900px) {
+  .sb-user {
+    display: flex;
+  }
+}
+
+.sb-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--electric, #00f5d4), #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #07101a;
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(0,245,212,0.25);
+}
+
+.sb-user-info {
+  overflow: hidden;
+}
+
+.sb-user-name {
+  color: var(--text-primary, #e2eaf4);
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sb-user-email {
+  color: var(--text-muted, #4d6a8a);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

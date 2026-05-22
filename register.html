@@ -3,56 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AgriConnect — Register</title>
+  <title>Register</title>
   <link rel="stylesheet" href="register.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── Password Strength ── */
+    .strength-bar {
+      height: 4px;
+      background: rgba(0,0,0,0.08);
+      border-radius: 99px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .strength-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 99px;
+      transition: width 0.35s ease, background 0.35s ease;
+    }
+    .strength-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5px;
+    }
+    .strength-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      transition: color 0.3s;
+      color: #888;
+    }
+    .strength-rules {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .rule {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: #aaa;
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 99px;
+      padding: 4px 10px;
+      transition: color 0.3s, border-color 0.3s, background 0.3s;
+    }
+    .rule.pass {
+      color: #16a34a;
+      background: rgba(22,163,74,0.09);
+      border-color: rgba(22,163,74,0.25);
+    }
+    .rule i { font-size: 9px; }
+
+    /* Confirm match indicator */
+    .match-msg {
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 6px;
+      min-height: 16px;
+      transition: color 0.3s;
+    }
+
+    /* Shake animation */
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%      { transform: translateX(-8px); }
+      40%      { transform: translateX(8px); }
+      60%      { transform: translateX(-5px); }
+      80%      { transform: translateX(5px); }
+    }
+    .shake { animation: shake 0.4s ease; }
+
+    /* Mobile fix */
+    @media (max-width: 768px) {
+      .reg-left { display: none !important; }
+      body { display: block !important; padding: 0; margin: 0; }
+      .reg-right {
+        width: 100% !important;
+        min-height: 100vh;
+        padding: 24px 16px 40px !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      br { display: none; }
+      .form-container { width: 100% !important; max-width: 100% !important; padding: 24px 20px !important; box-sizing: border-box; }
+      .fields-grid { grid-template-columns: 1fr !important; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+      .btn-row { flex-direction: column; gap: 10px; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Left decorative panel -->
   <div class="reg-left">
     <div class="brand">
-
-  <div class="logo-wrap logo-image">
-    <img 
-      src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" 
-      alt="Stackly Logo">
-  </div>
-
-  <p>
-    India's most trusted agri-commerce platform
-  </p>
-
-</div>
+      <div class="logo-wrap logo-image">
+        <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly Logo">
+      </div>
+      <p>India's most trusted agri-commerce platform</p>
+    </div>
     <div class="feature-list">
       <div class="feature-item">
         <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div>
-          <h4>Secure Transactions</h4>
-          <p>End-to-end encrypted payments with escrow protection.</p>
-        </div>
+        <div><h4>Secure Transactions</h4><p>End-to-end encrypted payments with escrow protection.</p></div>
       </div>
       <div class="feature-item">
         <div class="feat-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <div>
-          <h4>Live Market Prices</h4>
-          <p>Real-time mandi rates from 200+ markets across India.</p>
-        </div>
+        <div><h4>Live Market Prices</h4><p>Real-time mandi rates from 200+ markets across India.</p></div>
       </div>
       <div class="feature-item">
         <div class="feat-icon"><i class="fa-solid fa-truck-fast"></i></div>
-        <div>
-          <h4>Doorstep Logistics</h4>
-          <p>Integrated cold-chain and last-mile delivery network.</p>
-        </div>
+        <div><h4>Doorstep Logistics</h4><p>Integrated cold-chain and last-mile delivery network.</p></div>
       </div>
       <div class="feature-item">
         <div class="feat-icon"><i class="fa-solid fa-headset"></i></div>
-        <div>
-          <h4>24/7 Support</h4>
-          <p>Dedicated support in Hindi, Kannada, Tamil & more.</p>
-        </div>
+        <div><h4>24/7 Support</h4><p>Dedicated support in Hindi, Kannada, Tamil & more.</p></div>
       </div>
     </div>
     <div class="bg-circles">
@@ -94,21 +168,21 @@
       <form class="auth-form" id="regForm">
         <input type="hidden" id="selectedRole" value="farmer"/>
 
-        <!-- Step 1: Personal Info -->
+        <!-- ── Step 1: Personal Info ── -->
         <div class="form-step active" id="step1">
           <div class="fields-grid">
             <div class="field-group">
               <label>First Name</label>
               <div class="input-wrap">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Ramesh" required/>
+                <input type="text" id="firstName" placeholder="Ramesh" required/>
               </div>
             </div>
             <div class="field-group">
               <label>Last Name</label>
               <div class="input-wrap">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Kumar" required/>
+                <input type="text" id="lastName" placeholder="Kumar" required/>
               </div>
             </div>
           </div>
@@ -116,14 +190,14 @@
             <label>Email Address</label>
             <div class="input-wrap">
               <i class="fa-solid fa-envelope"></i>
-              <input type="email" placeholder="you@example.com" required/>
+              <input type="email" id="regEmail" placeholder="you@example.com" required/>
             </div>
           </div>
           <div class="field-group">
             <label>Mobile Number</label>
             <div class="input-wrap">
               <i class="fa-solid fa-phone"></i>
-              <input type="tel" placeholder="+91 98765 43210" required/>
+              <input type="tel" id="regPhone" placeholder="+91 98765 43210" required/>
             </div>
           </div>
           <button type="button" class="btn-primary" onclick="nextStep(2)">
@@ -131,13 +205,13 @@
           </button>
         </div>
 
-        <!-- Step 2: Location / Business -->
+        <!-- ── Step 2: Location / Business ── -->
         <div class="form-step" id="step2">
           <div class="field-group">
             <label>State</label>
             <div class="input-wrap">
               <i class="fa-solid fa-map-location-dot"></i>
-              <select>
+              <select id="regState">
                 <option value="">Select State</option>
                 <option>Karnataka</option>
                 <option>Maharashtra</option>
@@ -157,14 +231,14 @@
               <label>District</label>
               <div class="input-wrap">
                 <i class="fa-solid fa-city"></i>
-                <input type="text" placeholder="Mysuru"/>
+                <input type="text" id="regDistrict" placeholder="Mysuru"/>
               </div>
             </div>
             <div class="field-group">
               <label>Pincode</label>
               <div class="input-wrap">
                 <i class="fa-solid fa-hashtag"></i>
-                <input type="text" placeholder="570001"/>
+                <input type="text" id="regPin" placeholder="570001"/>
               </div>
             </div>
           </div>
@@ -197,9 +271,11 @@
           </div>
         </div>
 
-        <!-- Step 3: Password -->
+        <!-- ── Step 3: Password ── -->
         <div class="form-step" id="step3">
-          <div class="field-group">
+
+          <!-- Password field -->
+          <div class="field-group" id="passGroup">
             <label>Password</label>
             <div class="input-wrap">
               <i class="fa-solid fa-lock"></i>
@@ -208,10 +284,26 @@
                 <i class="fa-solid fa-eye"></i>
               </button>
             </div>
-            <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
-            <span class="strength-label" id="strengthLabel">Enter a password</span>
+
+            <!-- Live strength bar -->
+            <div class="strength-bar">
+              <div class="strength-fill" id="regStrengthFill"></div>
+            </div>
+            <div class="strength-row">
+              <span class="strength-label" id="regStrengthLabel">Enter a password</span>
+            </div>
+
+            <!-- Rule pills -->
+            <div class="strength-rules">
+              <span class="rule" id="reg-rule-len"><i class="fa-solid fa-circle-check"></i> 8+ chars</span>
+              <span class="rule" id="reg-rule-upper"><i class="fa-solid fa-circle-check"></i> Uppercase</span>
+              <span class="rule" id="reg-rule-num"><i class="fa-solid fa-circle-check"></i> Number</span>
+              <span class="rule" id="reg-rule-special"><i class="fa-solid fa-circle-check"></i> Symbol</span>
+            </div>
           </div>
-          <div class="field-group">
+
+          <!-- Confirm Password field -->
+          <div class="field-group" id="confirmGroup">
             <label>Confirm Password</label>
             <div class="input-wrap">
               <i class="fa-solid fa-lock"></i>
@@ -220,11 +312,18 @@
                 <i class="fa-solid fa-eye"></i>
               </button>
             </div>
+            <!-- Live match message -->
+            <div class="match-msg" id="matchMsg"></div>
           </div>
+
           <label class="checkbox-wrap terms">
-            <input type="checkbox" required/>
+            <input type="checkbox" id="agreeTerms" required/>
             <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
           </label>
+
+          <!-- Form-level error message -->
+          <div id="form-message" style="font-size:13px;font-weight:600;text-align:center;margin-bottom:10px;min-height:18px;"></div>
+
           <div class="btn-row">
             <button type="button" class="btn-secondary" onclick="prevStep(2)">
               <i class="fa-solid fa-arrow-left"></i> Back
@@ -234,6 +333,7 @@
             </button>
           </div>
         </div>
+
       </form>
 
       <p class="switch-link">Already have an account? <a href="login.html">Sign In</a></p>
@@ -241,6 +341,9 @@
   </div>
 
   <script>
+    /* ════════════════════════════════
+       ROLE SELECT
+    ════════════════════════════════ */
     let currentStep = 1;
 
     function selectRole(btn) {
@@ -249,17 +352,21 @@
       const role = btn.dataset.role;
       document.getElementById('selectedRole').value = role;
       document.getElementById('farmerFields').style.display = role === 'farmer' ? '' : 'none';
-      document.getElementById('buyerFields').style.display = role === 'buyer' ? '' : 'none';
+      document.getElementById('buyerFields').style.display  = role === 'buyer'  ? '' : 'none';
     }
 
+    /* ════════════════════════════════
+       STEP NAVIGATION
+    ════════════════════════════════ */
     function nextStep(n) {
-      document.getElementById('step' + currentStep).classList.remove('active');
-      document.getElementById('step' + currentStep + '-dot').classList.remove('active');
-      currentStep = n;
-      document.getElementById('step' + n).classList.add('active');
-      document.getElementById('step' + n + '-dot').classList.add('active');
+      /* Validate current step before advancing */
+      if (!validateStep(currentStep)) return;
+      goToStep(n);
     }
-    function prevStep(n) {
+
+    function prevStep(n) { goToStep(n); }
+
+    function goToStep(n) {
       document.getElementById('step' + currentStep).classList.remove('active');
       document.getElementById('step' + currentStep + '-dot').classList.remove('active');
       currentStep = n;
@@ -267,109 +374,182 @@
       document.getElementById('step' + n + '-dot').classList.add('active');
     }
 
+    /* ── Validate each step's required fields ── */
+    function validateStep(step) {
+      const stepEl = document.getElementById('step' + step);
+      const inputs = stepEl.querySelectorAll('input[required], select[required]');
+      let valid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          valid = false;
+          input.closest('.input-wrap').style.border = '1.5px solid #ef4444';
+          setTimeout(() => input.closest('.input-wrap').style.border = '', 2000);
+        }
+      });
+
+      if (!valid) {
+        shakeEl('step' + step);
+      }
+      return valid;
+    }
+
+    /* ════════════════════════════════
+       PASSWORD STRENGTH — LIVE
+    ════════════════════════════════ */
+    const passEl        = document.getElementById('reg-pass');
+    const fillEl        = document.getElementById('regStrengthFill');
+    const labelEl       = document.getElementById('regStrengthLabel');
+    const ruleLen       = document.getElementById('reg-rule-len');
+    const ruleUpper     = document.getElementById('reg-rule-upper');
+    const ruleNum       = document.getElementById('reg-rule-num');
+    const ruleSpecial   = document.getElementById('reg-rule-special');
+    const confirmEl     = document.getElementById('reg-confirm');
+    const matchMsg      = document.getElementById('matchMsg');
+
+    const strengthLevels = [
+      { label: 'Too weak',    color: '#ef4444', width: '20%' },
+      { label: 'Weak',        color: '#f97316', width: '40%' },
+      { label: 'Fair',        color: '#f59e0b', width: '60%' },
+      { label: 'Strong',      color: '#16a34a', width: '80%' },
+      { label: 'Very strong', color: '#00c896', width: '100%' }
+    ];
+
+    function checkRule(el, passes) {
+      el.classList.toggle('pass', passes);
+    }
+
+    function getScore(v) {
+      const hasLen     = v.length >= 8;
+      const hasUpper   = /[A-Z]/.test(v);
+      const hasNum     = /[0-9]/.test(v);
+      const hasSpecial = /[^A-Za-z0-9]/.test(v);
+      return { hasLen, hasUpper, hasNum, hasSpecial,
+               score: [hasLen, hasUpper, hasNum, hasSpecial].filter(Boolean).length };
+    }
+
+    /* Live strength update on every keystroke */
+    passEl.addEventListener('input', function () {
+      const v = this.value;
+      const { hasLen, hasUpper, hasNum, hasSpecial, score } = getScore(v);
+
+      checkRule(ruleLen,     hasLen);
+      checkRule(ruleUpper,   hasUpper);
+      checkRule(ruleNum,     hasNum);
+      checkRule(ruleSpecial, hasSpecial);
+
+      if (v.length === 0) {
+        fillEl.style.width = '0%';
+        labelEl.textContent = 'Enter a password';
+        labelEl.style.color = '#888';
+        return;
+      }
+
+      const lvl = v.length < 8 ? 0 : Math.min(score, 4);
+      fillEl.style.width      = strengthLevels[lvl].width;
+      fillEl.style.background = strengthLevels[lvl].color;
+      labelEl.textContent     = strengthLevels[lvl].label;
+      labelEl.style.color     = strengthLevels[lvl].color;
+
+      /* Also re-check confirm match if already typed */
+      if (confirmEl.value.length > 0) checkMatch();
+    });
+
+    /* ════════════════════════════════
+       CONFIRM PASSWORD — LIVE MATCH
+    ════════════════════════════════ */
+    confirmEl.addEventListener('input', checkMatch);
+
+    function checkMatch() {
+      const p = passEl.value;
+      const c = confirmEl.value;
+      if (c.length === 0) { matchMsg.textContent = ''; return; }
+
+      if (p === c) {
+        matchMsg.textContent = '✓ Passwords match';
+        matchMsg.style.color = '#16a34a';
+      } else {
+        matchMsg.textContent = '✗ Passwords do not match';
+        matchMsg.style.color = '#ef4444';
+      }
+    }
+
+    /* ════════════════════════════════
+       TOGGLE PASSWORD VISIBILITY
+    ════════════════════════════════ */
     function togglePass(id, btn) {
-      const inp = document.getElementById(id);
+      const inp  = document.getElementById(id);
       const icon = btn.querySelector('i');
-      inp.type = inp.type === 'password' ? 'text' : 'password';
+      inp.type   = inp.type === 'password' ? 'text' : 'password';
       icon.className = inp.type === 'password' ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
     }
 
-    document.getElementById('reg-pass')?.addEventListener('input', function() {
-      const v = this.value, fill = document.getElementById('strengthFill'), lbl = document.getElementById('strengthLabel');
-      let s = 0;
-      if (v.length >= 8) s++;
-      if (/[A-Z]/.test(v)) s++;
-      if (/[0-9]/.test(v)) s++;
-      if (/[^A-Za-z0-9]/.test(v)) s++;
-      const labels = ['Too short', 'Weak', 'Fair', 'Good', 'Strong'];
-      const colors = ['#e74c3c','#e67e22','#f1c40f','#2ecc71','#27ae60'];
-      fill.style.width = (s * 25) + '%';
-      fill.style.background = colors[s] || colors[0];
-      lbl.textContent = labels[s] || labels[0];
-    });
-
-   function handleRegister(e) {
-
-  e.preventDefault();
-
-  /* Create Message Box Automatically */
-
-  let msg = document.getElementById("form-message");
-
-  if (!msg) {
-
-    msg = document.createElement("div");
-    msg.id = "form-message";
-
-    msg.style.fontSize = "14px";
-    msg.style.fontWeight = "500";
-    msg.style.textAlign = "center";
-    msg.style.marginBottom = "18px";
-
-    const step3 = document.getElementById("step3");
-
-    step3.insertBefore(
-      msg,
-      step3.querySelector(".btn-row")
-    );
-  }
-
-  /* Get Inputs */
-
-  const inputs = document.querySelectorAll(
-    '#regForm input, #regForm select'
-  );
-
-  let isValid = true;
-
-  inputs.forEach(input => {
-
-    if (input.type === "hidden") return;
-
-    if (
-      input.hasAttribute("required") &&
-      input.value.trim() === ""
-    ) {
-      isValid = false;
+    /* ════════════════════════════════
+       SHAKE HELPER
+    ════════════════════════════════ */
+    function shakeEl(id) {
+      const el = document.getElementById(id);
+      el.classList.remove('shake');
+      void el.offsetWidth; /* reflow */
+      el.classList.add('shake');
+      setTimeout(() => el.classList.remove('shake'), 500);
     }
-  });
 
-  /* Empty Fields */
+    /* ════════════════════════════════
+       HANDLE REGISTER SUBMIT
+    ════════════════════════════════ */
+    function handleRegister(e) {
+      e.preventDefault();
 
-  if (!isValid) {
+      const msg = document.getElementById('form-message');
+      msg.textContent = '';
 
-    msg.innerHTML = "Please fill all required fields!";
-    msg.style.color = "#ff4d4d";
+      const pass    = passEl.value;
+      const confirm = confirmEl.value;
+      const terms   = document.getElementById('agreeTerms').checked;
+      const { score } = getScore(pass);
 
-    return;
-  }
+      /* 1. Password strength check */
+      if (score < 3) {
+        msg.textContent = '⚠️ Password is too weak. Need uppercase, number & symbol.';
+        msg.style.color = '#f97316';
+        shakeEl('passGroup');
+        return;
+      }
 
-  /* Password Match */
+      /* 2. Password match check */
+      if (pass !== confirm) {
+        msg.textContent = '⚠️ Passwords do not match!';
+        msg.style.color = '#ef4444';
+        shakeEl('confirmGroup');
+        return;
+      }
 
-  const password = document.getElementById("reg-pass").value;
-  const confirmPassword = document.getElementById("reg-confirm").value;
+      /* 3. Terms check */
+      if (!terms) {
+        msg.textContent = '⚠️ Please accept the Terms of Service.';
+        msg.style.color = '#f97316';
+        return;
+      }
 
-  if (password !== confirmPassword) {
+      /* 4. Success */
+      msg.textContent = '✅ Account created successfully!';
+      msg.style.color = '#16a34a';
 
-    msg.innerHTML = "Passwords do not match!";
-    msg.style.color = "#ff4d4d";
-
-    return;
-  }
-
-  /* Success */
-
-  msg.innerHTML = "Account created successfully!";
-  msg.style.color = "#22c55e";
-
-  /* Redirect */
-
-  setTimeout(() => {
-
-    window.location.href = "login.html";
-
-  }, 1200);
-}
+      setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+    }
   </script>
+
+  <style>
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%      { transform: translateX(-8px); }
+      40%      { transform: translateX(8px); }
+      60%      { transform: translateX(-5px); }
+      80%      { transform: translateX(5px); }
+    }
+    .shake { animation: shake 0.4s ease; }
+  </style>
+
 </body>
 </html>

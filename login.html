@@ -5,8 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign In</title>
   <link rel="stylesheet" href="style1.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── Password Strength Bar ── */
+    .strength-bar {
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 99px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .strength-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 99px;
+      transition: width 0.35s ease, background 0.35s ease;
+    }
+    .strength-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .strength-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+    .strength-rules {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .rule {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: #4d6a8a;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 99px;
+      padding: 4px 10px;
+      transition: color 0.3s, border-color 0.3s, background 0.3s;
+    }
+    .rule.pass {
+      color: #10b981;
+      background: rgba(16,185,129,0.10);
+      border-color: rgba(16,185,129,0.25);
+    }
+    .rule i { font-size: 10px; }
+
+    /* ── Auth message styling ── */
+    #auth-msg {
+      font-size: 13px;
+      font-weight: 600;
+      min-height: 20px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,27 +74,15 @@
 
   <!-- ── Left decorative panel ── -->
   <div class="auth-panel">
-    <div class="ap-logo">
-    
-      
-    </div>
+    <div class="ap-logo"></div>
 
     <p class="ap-tagline">India's <span>smartest</span><br>farm-to-table<br>marketplace</p>
     <p class="ap-desc">Connecting 48,000+ farmers directly with buyers, providing real-time mandi rates, cold-chain logistics, and secure payments.</p>
 
     <div class="ap-stats">
-      <div class="stat-pill">
-        <strong>48K+</strong>
-        <span>Farmers</span>
-      </div>
-      <div class="stat-pill">
-        <strong>12K+</strong>
-        <span>Buyers</span>
-      </div>
-      <div class="stat-pill">
-        <strong>₹2.4Cr</strong>
-        <span>Traded</span>
-      </div>
+      <div class="stat-pill"><strong>48K+</strong><span>Farmers</span></div>
+      <div class="stat-pill"><strong>12K+</strong><span>Buyers</span></div>
+      <div class="stat-pill"><strong>₹2.4Cr</strong><span>Traded</span></div>
     </div>
 
     <div class="float-tags">
@@ -49,21 +97,18 @@
   <div class="auth-form-wrap">
     <div class="auth-box">
 
-  <!-- Logo -->
-  <div class="login-logo">
-    <a href="index.html">
-      <img 
-        src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" 
-        alt="Stackly"
-      >
-    </a>
-  </div>
+      <!-- Logo -->
+      <div class="login-logo">
+        <a href="index.html">
+          <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly"/>
+        </a>
+      </div>
 
-  <center>
+      <center>
+        <h2>Welcome back</h2>
+        <p class="subtitle">Sign in to continue to Stackly</p>
+      </center>
 
- <h2>Welcome back</h2>
-      <p class="subtitle">Sign in to continue to stackly</p>
- </center>
       <!-- Role tabs -->
       <div class="role-tabs">
         <button class="role-tab active" data-role="farmer" onclick="selectRole(this)">
@@ -84,6 +129,7 @@
         <input type="hidden" id="selectedRole" value="farmer"/>
         <p id="auth-msg"></p>
 
+        <!-- Email -->
         <div class="field-group">
           <label>Email Address</label>
           <div class="input-wrap">
@@ -92,6 +138,7 @@
           </div>
         </div>
 
+        <!-- Password -->
         <div class="field-group">
           <label>Password</label>
           <div class="input-wrap">
@@ -101,8 +148,25 @@
               <i class="fa-solid fa-eye"></i>
             </button>
           </div>
+
+          <!-- Strength bar -->
+          <div class="strength-bar">
+            <div class="strength-fill" id="strengthFill"></div>
+          </div>
+          <div class="strength-row">
+            <span class="strength-label" id="strengthLabel" style="color:#4d6a8a">Enter your password</span>
+          </div>
+
+          <!-- Rules pills -->
+          <div class="strength-rules">
+            <span class="rule" id="rule-len"><i class="fa-solid fa-circle-check"></i> 8+ chars</span>
+            <span class="rule" id="rule-upper"><i class="fa-solid fa-circle-check"></i> Uppercase</span>
+            <span class="rule" id="rule-num"><i class="fa-solid fa-circle-check"></i> Number</span>
+            <span class="rule" id="rule-special"><i class="fa-solid fa-circle-check"></i> Symbol</span>
+          </div>
         </div>
 
+        <!-- Remember / Forgot -->
         <div class="form-options">
           <label class="chk-wrap">
             <input type="checkbox"/>
@@ -116,16 +180,124 @@
         </button>
       </form>
 
-      
-
       <p class="switch-link">
         Don't have an account? <a href="register.html">Create Account</a>
       </p>
+
     </div>
   </div>
 
 </div>
 
 <script src="app.js"></script>
+<script>
+  /* ── Password strength checker ── */
+  const passInput    = document.getElementById('password');
+  const fillEl       = document.getElementById('strengthFill');
+  const labelEl      = document.getElementById('strengthLabel');
+  const ruleLen      = document.getElementById('rule-len');
+  const ruleUpper    = document.getElementById('rule-upper');
+  const ruleNum      = document.getElementById('rule-num');
+  const ruleSpecial  = document.getElementById('rule-special');
+
+  const levels = [
+    { label: 'Too weak',  color: '#ef4444', width: '20%' },
+    { label: 'Weak',      color: '#f97316', width: '40%' },
+    { label: 'Fair',      color: '#f59e0b', width: '60%' },
+    { label: 'Strong',    color: '#10b981', width: '80%' },
+    { label: 'Very strong', color: '#00f5d4', width: '100%' }
+  ];
+
+  function checkRule(el, passes) {
+    el.classList.toggle('pass', passes);
+  }
+
+  passInput.addEventListener('input', function () {
+    const v = this.value;
+    const hasLen     = v.length >= 8;
+    const hasUpper   = /[A-Z]/.test(v);
+    const hasNum     = /[0-9]/.test(v);
+    const hasSpecial = /[^A-Za-z0-9]/.test(v);
+
+    checkRule(ruleLen,     hasLen);
+    checkRule(ruleUpper,   hasUpper);
+    checkRule(ruleNum,     hasNum);
+    checkRule(ruleSpecial, hasSpecial);
+
+    const score = [hasLen, hasUpper, hasNum, hasSpecial].filter(Boolean).length;
+
+    if (v.length === 0) {
+      fillEl.style.width = '0%';
+      labelEl.textContent = 'Enter your password';
+      labelEl.style.color = '#4d6a8a';
+      return;
+    }
+
+    /* score 1-4 mapped to levels index 0-4 */
+    const lvl = v.length < 8 ? 0 : Math.min(score, 4);
+    fillEl.style.width      = levels[lvl].width;
+    fillEl.style.background = levels[lvl].color;
+    labelEl.textContent     = levels[lvl].label;
+    labelEl.style.color     = levels[lvl].color;
+  });
+
+  /* ── Override handleLogin to block weak passwords ── */
+  const _origLogin = window.handleLogin;
+  window.handleLogin = function (event) {
+    event.preventDefault();
+
+    const v          = document.getElementById('password').value;
+    const hasLen     = v.length >= 8;
+    const hasUpper   = /[A-Z]/.test(v);
+    const hasNum     = /[0-9]/.test(v);
+    const hasSpecial = /[^A-Za-z0-9]/.test(v);
+    const score      = [hasLen, hasUpper, hasNum, hasSpecial].filter(Boolean).length;
+
+    const msg = document.getElementById('auth-msg');
+
+    if (score < 3) {
+      msg.textContent = '⚠️ Password is too weak. Use 8+ chars, a number, and a symbol.';
+      msg.style.color = '#f97316';
+
+      /* Shake the password field */
+      const wrap = document.getElementById('password').closest('.field-group');
+      wrap.style.animation = 'none';
+      wrap.offsetHeight; /* reflow */
+      wrap.style.animation = 'shake 0.4s ease';
+      return;
+    }
+
+    /* Strong enough — proceed with original login */
+    if (typeof _origLogin === 'function') {
+      _origLogin(event);
+    } else {
+      /* Fallback if app.js not loaded yet */
+      const email = document.getElementById('email').value.trim();
+      const role  = document.getElementById('selectedRole').value;
+      if (!email) { msg.textContent = 'Please enter your email.'; msg.style.color = '#ef4444'; return; }
+      localStorage.setItem('af_email', email);
+      localStorage.setItem('af_role',  role);
+      localStorage.setItem('af_name',  email.split('@')[0]);
+      msg.textContent = '✅ Login successful!';
+      msg.style.color = '#10b981';
+      setTimeout(() => {
+        if (role === 'farmer') location.href = 'dashboard-farmer.html';
+        else if (role === 'buyer')  location.href = 'dashboard-buyer.html';
+        else if (role === 'admin')  location.href = 'dashboard-admin.html';
+      }, 1000);
+    }
+  };
+</script>
+
+<style>
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20%      { transform: translateX(-8px); }
+    40%      { transform: translateX(8px); }
+    60%      { transform: translateX(-6px); }
+    80%      { transform: translateX(6px); }
+  }
+</style>
+
 </body>
 </html>
