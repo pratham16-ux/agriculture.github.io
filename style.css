@@ -1834,3 +1834,64 @@ header.scrolled .navbar {
   }
 
 }
+/* ============================================
+   STACKLY FARM — CURSOR FIX
+   1. In style.css, REMOVE "cursor: none" from body.
+   2. Add this in every page <head>:
+      <link rel="stylesheet" href="cursor-fix.css">
+============================================ */
+
+body {
+  cursor: default !important;
+}
+
+a,
+button,
+[role="button"],
+label,
+select,
+.menu-toggle,
+.hamburger,
+.close-menu,
+.cta-primary,
+.cta-ghost,
+.cta-play,
+.btn-nav,
+.btn-primary,
+.btn-outline,
+.btn-white,
+.btn-signin,
+.btn-register,
+.svc-card,
+.svc-link,
+.srv-card,
+.srv-link,
+.blog-card,
+.blog-link,
+.blog-read,
+.prod-card,
+.why-card,
+.social-row a,
+.footer-links-col a,
+.nav-links li a,
+.mobile-nav a,
+.mobile-buttons a,
+.play-circle,
+.nl-input-wrap button,
+.register,
+.hero-btn,
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],
+textarea {
+  cursor: text !important;
+}
