@@ -157,3 +157,24 @@ body { display: flex; min-height: 100vh; background: var(--cream); }
   .fields-grid { grid-template-columns: 1fr; }
   .feature-list { gap: 16px; }
 }
+
+/* CLEAN LOGO */
+
+.logo-image{
+  width:140px;
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  background:none;
+  border:none;
+  box-shadow:none;
+  padding:0;
+}
+
+.logo-image img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18));
+}

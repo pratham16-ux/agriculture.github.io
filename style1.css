@@ -1190,7 +1190,7 @@ body::before {
   margin-bottom: 28px;
 }
 .login-logo img {
-  height: 38px;
+  height: 80px;
   width: auto;
   object-fit: contain;
 }
