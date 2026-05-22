@@ -289,3 +289,55 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 });
+
+/* ============================================
+   STACKLY FARM — MOBILE MENU (All Pages)
+============================================ */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const closeBtn = document.querySelector('.mobile-menu .close-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav a');
+
+  if (!hamburger || !mobileMenu) return;
+
+  function openMenu() {
+    mobileMenu.classList.add('active');
+    hamburger.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (mobileMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeMenu);
+  }
+
+  mobileLinks.forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  mobileMenu.addEventListener('click', function (e) {
+    if (e.target === mobileMenu) closeMenu();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+});

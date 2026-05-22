@@ -3,298 +3,354 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stackly Farm</title>
+  <title>Stackly Farm — Future of Agriculture</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mobile-menu.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
- 
+
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
 <!-- OVERLAY -->
 <div class="menu-overlay"></div>
- 
-<header>
+
+<!-- ══ DESKTOP HEADER ══ -->
+<header id="header">
   <nav class="navbar">
-    <div class="logo">
+    <a href="index.html" class="logo">
       <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly" loading="eager">
-    </div>
- 
-    <button class="menu-toggle" aria-label="Open menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
- 
-    <ul class="nav-links">
-      <div class="close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <button class="close-menu" id="closeMenu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="service.html">Services</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
-      
+      <li class="mobile-auth-li">
+        <a href="login.html" class="btn-nav">Sign In</a>
+        <a href="register.html" class="btn-nav solid">Register</a>
       </li>
     </ul>
- 
+
     <div class="auth-buttons">
-      <a href="login.html" class="btn">sigin</a>
-      <a href="register.html" class="btn register">Register</a>
+      <a href="login.html" class="btn-nav">Sign In</a>
+      <a href="register.html" class="btn-nav solid">Register</a>
     </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
   </nav>
 </header>
- 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <span>Future Of Agriculture</span>
-    <h1>Growing<br>Fresh & Healthy<br>Organic Food</h1>
-    <p>Smart agriculture with premium technology and sustainable farming for a greener tomorrow.</p>
-    <div class="buttons">
-      <a href="services.html" class="primary">Explore More</a>
-      <a href="about.html" class="secondary">View Projects</a>
+
+<!-- ══ MOBILE HEADER ══ -->
+<div class="mobile-header">
+  <a href="index.html" class="mobile-logo">
+    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+  </a>
+  <button class="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" role="dialog" aria-modal="true">
+  <div class="mobile-menu-inner">
+    <div class="close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-buttons">
+      <a href="login.html" class="btn-signin">Sign In</a>
+      <a href="register.html" class="btn-register">Register</a>
     </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     HERO — SPLIT BENTO LAYOUT
+══════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg-grain"></div>
+  <div class="hero-bg-blob blob1"></div>
+  <div class="hero-bg-blob blob2"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag reveal-tag">
+      <span class="tag-dot"></span>
+      Future of Agriculture · Est. 2001
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="line line1">Rooted</span>
+      <span class="line line2"><em>in</em> Nature,</span>
+      <span class="line line3">Grown by</span>
+      <span class="line line4">Science.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Premium smart farming: AI-powered crop management, organic production standards, and sustainable solutions for tomorrow's harvest — all in one ecosystem.
+    </p>
+
+    <div class="hero-cta">
+      <a href="service.html" class="cta-primary">
+        <span>Explore Platform</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="about.html" class="cta-play">
+        <div class="play-circle"><i class="fa-solid fa-play"></i></div>
+        <span>Watch Story</span>
+      </a>
+    </div>
+
     <div class="hero-stats">
-      <div><h2>12K+</h2><p>Customers</p></div>
-      <div><h2>120+</h2><p>Farm Experts</p></div>
-      <div><h2>24+</h2><p>Years</p></div>
+      <div class="stat-item">
+        <span class="count-up" data-target="12000">1179</span><small>K+</small>
+        <p>Customers</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="count-up" data-target="120">113</span><small>+</small>
+        <p>Farm Experts</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="count-up" data-target="24">21</span><small>+</small>
+        <p>Years Active</p>
+      </div>
     </div>
   </div>
- 
-  <div class="hero-right">
-    <div class="circle"></div>
-    <div class="diamond-wrap">
-      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=1200" alt="Smart Farm" loading="eager">
+
+  <div class="hero-bento">
+    <div class="bento-card bento-main">
+      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=900" alt="Smart Farm">
+      <div class="bento-overlay">
+        <span class="badge-organic">100% Organic</span>
+      </div>
     </div>
-    <div class="blob-ring"></div>
-    <div class="floating-card">
-      <i class="fa-solid fa-leaf"></i>
-      <div><h3>100%</h3><p>Organic</p></div>
+    <div class="bento-card bento-stat">
+      <div class="bento-emoji">🌾</div>
+      <h3>500+</h3>
+      <p>Partner Farms</p>
     </div>
+    <div class="bento-card bento-pill">
+      <i class="fa-solid fa-seedling"></i>
+      <div>
+        <strong>AI Soil Analysis</strong>
+        <small>Real-time monitoring</small>
+      </div>
+    </div>
+    <div class="bento-card bento-img2">
+      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=700" alt="Harvest">
+    </div>
+    <div class="bento-card bento-rating">
+      <div class="stars">★★★★★</div>
+      <p>"The best smart agriculture platform available today."</p>
+      <span>— AgriTech Review 2025</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
- 
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>🌿 Organic Farming</span><span>🚜 Smart Equipment</span><span>💧 Water Efficiency</span>
+    <span>🌾 Crop Innovation</span><span>🤖 AI Agriculture</span><span>🌍 Sustainable Future</span>
+    <span>🥦 Fresh Produce</span><span>📡 IoT Sensors</span>
+    <span>🌿 Organic Farming</span><span>🚜 Smart Equipment</span><span>💧 Water Efficiency</span>
+    <span>🌾 Crop Innovation</span><span>🤖 AI Agriculture</span><span>🌍 Sustainable Future</span>
+    <span>🥦 Fresh Produce</span><span>📡 IoT Sensors</span>
+  </div>
+</div>
+
 <!-- SERVICES -->
-<section class="services-new">
-  <div class="services-header reveal-up">
-    <span>What We Offer</span>
-    <h2>Premium Agriculture Services</h2>
-    <p>Modern solutions for sustainable and smart farming growth.</p>
+<section class="services-section" id="services">
+  <div class="sec-label reveal-up">What We Offer</div>
+  <div class="sec-header-row">
+    <h2 class="sec-title reveal-up">Premium <em>Agriculture</em><br>Services</h2>
+    <p class="sec-desc reveal-up">Modern solutions combining AI, organic methods, and sustainable technology for next-generation farming.</p>
   </div>
- 
-  <div class="services-layout stagger-children">
-    <div class="service-highlight reveal-left">
-      <div class="highlight-card">
-        <div class="big-icon">🌿</div>
-        <h3>Smart Farming Ecosystem</h3>
-        <p>Integrated agriculture solutions combining AI, automation and organic farming for maximum productivity and sustainability.</p>
-        <a href="services.html" class="learn-btn">Explore More →</a>
-      </div>
-    </div>
-    <div class="service-stack reveal-right">
-      <div class="service-item">
-        <div class="icon-box">🌱</div>
-        <div class="text">
-          <h3>Organic Farming</h3>
-          <p>Healthy production and eco systems.</p>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="icon-box">🚜</div>
-        <div class="text">
-          <h3>Modern Equipment</h3>
-          <p>Technology powered farming.</p>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="icon-box">🌾</div>
-        <div class="text">
-          <h3>Crop Production</h3>
-          <p>Efficient premium agriculture.</p>
-        </div>
-      </div>
-    </div>
+  <div class="services-cards">
+    <div class="svc-card reveal-up" style="--d:.05s"><div class="svc-icon-wrap">🌱</div><h3>Organic Farming</h3><p>Chemical-free cultivation with soil health monitoring and biodiversity-first practices.</p><a href="service.html" class="svc-link">Explore <i class="fa-solid fa-arrow-right"></i></a><div class="svc-num">01</div></div>
+    <div class="svc-card reveal-up" style="--d:.12s"><div class="svc-icon-wrap">🤖</div><h3>AI Crop Management</h3><p>Satellite imaging, predictive yield analytics, and autonomous irrigation driven by machine learning.</p><a href="service.html" class="svc-link">Explore <i class="fa-solid fa-arrow-right"></i></a><div class="svc-num">02</div></div>
+    <div class="svc-card svc-dark reveal-up" style="--d:.19s"><div class="svc-icon-wrap">🚜</div><h3>Modern Equipment</h3><p>Precision-guided machinery, drone fleet management, and IoT-connected farm tools.</p><a href="service.html" class="svc-link">Explore <i class="fa-solid fa-arrow-right"></i></a><div class="svc-num">03</div></div>
+    <div class="svc-card reveal-up" style="--d:.26s"><div class="svc-icon-wrap">💧</div><h3>Smart Irrigation</h3><p>Water-saving drip systems and sensor-driven irrigation schedules that cut water use by 60%.</p><a href="service.html" class="svc-link">Explore <i class="fa-solid fa-arrow-right"></i></a><div class="svc-num">04</div></div>
   </div>
 </section>
- 
+
 <!-- STORY -->
-<section class="story">
-  <div class="story-left reveal-left">
-    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?fm=webp&q=80&w=900" alt="Farm Field">
+<section class="story-section" id="story">
+  <div class="story-img-col reveal-left">
+    <div class="story-img-stack">
+      <img class="story-img-back" src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?fm=webp&q=80&w=900" alt="Farm Field">
+      <img class="story-img-front" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=700" alt="Harvest">
+      <div class="story-badge"><div class="badge-ring"><span>Since</span><strong>2001</strong></div></div>
+    </div>
   </div>
-  <div class="story-content reveal-up">
-    <div class="grain">🌾</div>
-    <span>Welcome To Stackly</span>
-    <h2>Plant Today,<br>Harvest Tomorrow</h2>
-    <h4>Healthy farming through modern organic methods.</h4>
-    <p>Our agriculture solutions focus on smart farming, sustainability, and future crop innovation across every season.</p>
-    <a href="about.html" class="story-btn">Learn More <span>→</span></a>
-  </div>
-  <div class="story-right reveal-right">
-    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=900" alt="Harvest">
+  <div class="story-text-col reveal-right">
+    <div class="sec-label">Our Story</div>
+    <h2>Plant Today, <em>Harvest</em><br>A Better Tomorrow</h2>
+    <p class="story-lead">We believe food starts with healthy soil. For 24 years, Stackly has bridged the gap between tradition and technology.</p>
+    <div class="story-points">
+      <div class="story-point"><div class="sp-icon">🌿</div><div><h4>Certified Organic Standards</h4><p>USDA & EU organic certified supply chain from seed to shelf.</p></div></div>
+      <div class="story-point"><div class="sp-icon">📡</div><div><h4>Real-Time Farm Intelligence</h4><p>Live dashboards with soil sensors, weather data, and yield predictions.</p></div></div>
+      <div class="story-point"><div class="sp-icon">🤝</div><div><h4>Farmer-First Community</h4><p>120+ dedicated agri-experts supporting every partner farm daily.</p></div></div>
+    </div>
+    <a href="about.html" class="cta-primary">Learn Our Story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 </section>
- 
+
 <!-- SHOWCASE -->
-<section class="showcase">
-  <div class="show-left reveal-left">
-    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=900" alt="Natural Farming">
-  </div>
-  <div class="show-right reveal-right">
-    <span>About Agriculture</span>
-    <h2>Natural Farming For Better Future</h2>
-    <p>Building modern agriculture with nature and innovation at every step.</p>
-    <ul>
-      <li>✔ Sustainable Methods</li>
-      <li>✔ Smart Production</li>
-      <li>✔ Healthy Food</li>
-      <li>✔ Organic Standards</li>
-    </ul>
-    <a href="about.html" class="primary">Discover More</a>
-  </div>
-</section>
- 
-<!-- EXPERIENCE -->
-<section class="experience">
-  <div class="exp-left reveal-left">
-    <span>Why Choose Stackly</span>
-    <h2>Smart Farming<br>Powered By Nature</h2>
-    <p>We combine innovation, sustainable technology and premium agriculture solutions to increase productivity and build healthier ecosystems.</p>
-    <div class="exp-features">
-      <div class="feature">🌱 Organic Process</div>
-      <div class="feature">🚜 Smart Equipment</div>
-      <div class="feature">💧 Water Efficiency</div>
-      <div class="feature">🌾 High Production</div>
+<section class="showcase-section">
+  <div class="showcase-inner">
+    <div class="showcase-text reveal-up">
+      <div class="sec-label light">About Agriculture</div>
+      <h2>Natural Farming<br>For <em>A Better</em> Future</h2>
+      <p>At Stackly, we integrate nature's wisdom with cutting-edge technology. Every solution we build is rooted in ecological responsibility.</p>
+      <ul class="showcase-list">
+        <li><span class="sc-check">✓</span> Sustainable multi-season crop cycles</li>
+        <li><span class="sc-check">✓</span> Zero-waste farm management systems</li>
+        <li><span class="sc-check">✓</span> Blockchain-verified organic traceability</li>
+        <li><span class="sc-check">✓</span> Carbon-neutral farm operations</li>
+      </ul>
+      <a href="about.html" class="cta-primary light">Discover More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-    <a href="services.html" class="primary">Explore Innovation</a>
-  </div>
-  <div class="exp-right reveal-right">
-    <div class="image-wrap">
-      <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?fm=webp&q=80&w=900" alt="Innovation">
+    <div class="showcase-img-grid reveal-right">
+      <img class="sc-img1" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=700" alt="Farming">
+      <img class="sc-img2" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=500" alt="Field">
     </div>
   </div>
 </section>
- 
-<!-- PRODUCTS -->
-<section class="products">
-  <div class="section-header reveal-up">
-    <span>Fresh From Farms</span>
-    <h2>Our Organic Products</h2>
-    <p>Pure, healthy and naturally grown agricultural products.</p>
-  </div>
-  <div class="product-grid stagger-children">
-    <div class="product-card reveal-left">
-      <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?fm=webp&q=80&w=700" alt="Vegetables">
-      <h3>Fresh Vegetables</h3>
-      <p>Organic & chemical-free farm vegetables.</p>
-    </div>
-    <div class="product-card reveal-up">
-      <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?fm=webp&q=80&w=700" alt="Fruits">
-      <h3>Natural Fruits</h3>
-      <p>Juicy, fresh and naturally grown fruits.</p>
-    </div>
-    <div class="product-card reveal-right">
-      <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?fm=webp&q=80&w=700" alt="Grains">
-      <h3>Grains & Wheat</h3>
-      <p>High quality organic grains from farms.</p>
-    </div>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+  <div class="sec-label reveal-up">Why Choose Us</div>
+  <h2 class="sec-title centered reveal-up">Smart Farming<br><em>Powered by Nature</em></h2>
+  <div class="why-grid">
+    <div class="why-card reveal-up" style="--d:.0s"><div class="why-icon">🌐</div><h3>Global Supply Chain</h3><p>Direct farm-to-market connections in 40+ countries, eliminating intermediaries.</p></div>
+    <div class="why-card reveal-up" style="--d:.08s"><div class="why-icon">🧬</div><h3>Soil DNA Testing</h3><p>Hyper-local soil genomics analysis for precision fertilisation unique to each plot.</p></div>
+    <div class="why-card why-card-dark reveal-up" style="--d:.16s"><div class="why-icon">☀️</div><h3>Solar-Powered Ops</h3><p>100% renewable energy powering our cold-storage, processing, and logistics network.</p></div>
+    <div class="why-card reveal-up" style="--d:.24s"><div class="why-icon">📊</div><h3>Harvest Analytics</h3><p>Predictive analytics with 94% yield accuracy, helping farmers plan resources months ahead.</p></div>
+    <div class="why-card reveal-up" style="--d:.32s"><div class="why-icon">🛡️</div><h3>Crop Insurance AI</h3><p>Automated climate-risk assessment and instant insurance claim processing.</p></div>
+    <div class="why-card reveal-up" style="--d:.40s"><div class="why-icon">🤝</div><h3>Community Network</h3><p>12,000+ farmer network sharing knowledge, resources, and market access.</p></div>
   </div>
 </section>
- 
+
 <!-- IMPACT -->
-<section class="impact stagger-children">
-  <div class="impact-box reveal-up"><h2>500+</h2><p>Organic Farms</p></div>
-  <div class="impact-box reveal-up"><h2>1.2M+</h2><p>Happy Customers</p></div>
-  <div class="impact-box reveal-up"><h2>98%</h2><p>Satisfaction Rate</p></div>
-  <div class="impact-box reveal-up"><h2>40+</h2><p>Countries Served</p></div>
+<section class="impact-section">
+  <div class="impact-bg"></div>
+  <div class="impact-grid">
+    <div class="impact-item reveal-up"><h2><span class="count-up" data-target="500">436</span>+</h2><p>Organic Farms</p></div>
+    <div class="impact-item reveal-up" style="transition-delay:.1s"><h2><span class="count-up" data-target="1200">1106</span>K+</h2><p>Happy Customers</p></div>
+    <div class="impact-item reveal-up" style="transition-delay:.2s"><h2><span class="count-up" data-target="98">83</span>%</h2><p>Satisfaction Rate</p></div>
+    <div class="impact-item reveal-up" style="transition-delay:.3s"><h2><span class="count-up" data-target="40">21</span>+</h2><p>Countries Served</p></div>
+  </div>
 </section>
- 
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="sec-label reveal-up">How It Works</div>
+  <h2 class="sec-title centered reveal-up">From Soil to <em>Your Table</em></h2>
+  <div class="process-track">
+    <div class="process-line"></div>
+    <div class="process-step reveal-up" style="--d:.0s"><div class="ps-num">01</div><div class="ps-icon">🧪</div><h4>Soil Analysis</h4><p>AI-powered soil testing identifies optimal crops and amendments for your specific land.</p></div>
+    <div class="process-step reveal-up" style="--d:.12s"><div class="ps-num">02</div><div class="ps-icon">🌱</div><h4>Smart Planting</h4><p>Drone-guided precision seeding and automated irrigation for every seedling.</p></div>
+    <div class="process-step reveal-up" style="--d:.24s"><div class="ps-num">03</div><div class="ps-icon">📡</div><h4>Live Monitoring</h4><p>24/7 sensor data streams with instant alerts for weather, pests, and crop health.</p></div>
+    <div class="process-step reveal-up" style="--d:.36s"><div class="ps-num">04</div><div class="ps-icon">🚛</div><h4>Harvest & Deliver</h4><p>Cold-chain logistics and blockchain traceability from field to final destination.</p></div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="section-header reveal-up">
-    <span>What People Say</span>
-    <h2>Farmers & Customers Feedback</h2>
-  </div>
-  <div class="testimonial-grid">
-    <div class="testimonial-card reveal-left">
-      <p>"Stackly helped me increase crop yield using smart farming techniques. Truly amazing platform!"</p>
-      <h4>— Ramesh Farmer</h4>
-    </div>
-    <div class="testimonial-card reveal-up">
-      <p>"Organic vegetables quality is top-notch. Fresh and healthy every time I order."</p>
-      <h4>— Priya Customer</h4>
-    </div>
-    <div class="testimonial-card reveal-right">
-      <p>"Best agriculture support system for modern farming solutions across India."</p>
-      <h4>— Arjun Agro Expert</h4>
-    </div>
+<section class="testimonials-section" id="testimonials">
+  <div class="sec-label reveal-up">What People Say</div>
+  <h2 class="sec-title centered reveal-up">Farmers &amp; Customers<br><em>Speak Honestly</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card testi-featured reveal-left"><div class="testi-quote">"</div><p>Stackly's AI crop management system doubled our wheat yield in a single season. The soil analytics alone paid for the entire subscription in the first month.</p><div class="testi-author"><div class="testi-avatar">R</div><div><strong>Ramesh Patel</strong><span>Wheat Farmer, Punjab</span></div></div></div>
+    <div class="testi-card reveal-up"><div class="testi-quote">"</div><p>The organic vegetables quality is extraordinary. Fresh, chemical-free, and delivered within 4 hours of harvest. Nothing else compares.</p><div class="testi-author"><div class="testi-avatar">P</div><div><strong>Priya Mehta</strong><span>Home Customer, Bangalore</span></div></div></div>
+    <div class="testi-card reveal-right"><div class="testi-quote">"</div><p>Best agriculture support system for modern farming solutions. Their expert team is always available and the tech actually works in real fields.</p><div class="testi-author"><div class="testi-avatar">A</div><div><strong>Arjun Sharma</strong><span>Agro Expert, Maharashtra</span></div></div></div>
   </div>
 </section>
- 
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="blog-header">
+    <div><div class="sec-label reveal-up">From the Field</div><h2 class="sec-title reveal-up">Latest <em>Insights</em></h2></div>
+    <a href="blog.html" class="cta-ghost reveal-up">View All Articles →</a>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card reveal-left"><div class="blog-img"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=600" alt="Blog 1"><span class="blog-cat">Technology</span></div><div class="blog-body"><span class="blog-date">May 12, 2026</span><h3>How AI Is Revolutionising Crop Yield Predictions in 2026</h3><a href="blog.html" class="blog-read">Read Article →</a></div></div>
+    <div class="blog-card reveal-up"><div class="blog-img"><img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?fm=webp&q=80&w=600" alt="Blog 2"><span class="blog-cat">Organic</span></div><div class="blog-body"><span class="blog-date">April 28, 2026</span><h3>The Science Behind Soil Health and Long-Term Crop Sustainability</h3><a href="blog.html" class="blog-read">Read Article →</a></div></div>
+    <div class="blog-card reveal-right"><div class="blog-img"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=600" alt="Blog 3"><span class="blog-cat">Sustainability</span></div><div class="blog-body"><span class="blog-date">April 10, 2026</span><h3>Carbon Neutral Farming: Real Strategies That Work at Scale</h3><a href="blog.html" class="blog-read">Read Article →</a></div></div>
+  </div>
+</section>
+
 <!-- NEWSLETTER -->
-<section class="newsletter reveal-scale">
-  <h2>Stay Updated With Stackly</h2>
-  <p>Get latest farming tips, organic updates & agriculture news.</p>
-  <div class="newsletter-box">
-    <input type="email" placeholder="Enter your email">
-    <button>Subscribe</button>
+<section class="newsletter-section">
+  <div class="nl-inner reveal-scale">
+    <div class="nl-text"><div class="sec-label light">Stay Updated</div><h2>Get Farm-Fresh<br><em>Insights Weekly</em></h2><p>Farming tips, organic news, AI agriculture updates, and exclusive offers straight to your inbox.</p></div>
+    <div class="nl-form">
+      <div class="nl-input-wrap"><i class="fa-solid fa-envelope"></i><input type="email" id="nlEmail" placeholder="Enter your email address"><button id="nlBtn">Subscribe</button></div>
+      <p class="nl-note">No spam. Unsubscribe anytime. 12,000+ subscribers.</p>
+      <div class="nl-success" id="nlSuccess"><i class="fa-solid fa-check"></i> You're in! Welcome to the community.</div>
+    </div>
   </div>
 </section>
- 
+
 <!-- CTA -->
-<section class="cta reveal-up">
-  <h2>Grow With Nature</h2>
-  <p>Premium farming solutions for a better tomorrow.</p>
-  <a href="contact.html" class="primary">Start Today</a>
-</section>
- 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-box reveal-up">
-      <div class="footer-logo">
-      <a href="index.html"> <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
-      </div></a> 
-      <p>Premium agriculture solutions for smart farming, organic production, and sustainable future growth.</p>
-       <br><div class="footer-box reveal-up">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-box reveal-up">
-      <h3>Services</h3>
-      <ul>
-        <li><a href="services.html">Organic Farming</a></li>
-        <li><a href="services.html">Smart Agriculture</a></li>
-        <li><a href="services.html">Crop Management</a></li>
-        <li><a href="services.html">Modern Equipment</a></li>
-      </ul>
-    </div>
-    <div class="footer-box reveal-up">
-      <h3>Contact</h3>
-      <p><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</p>
-      <p><i class="fa-solid fa-phone"></i> +91 98881 55661</p>
-      <p><i class="fa-solid fa-envelope"></i> hello@stackly.com</p>
+<section class="cta-section">
+  <div class="cta-bg-img"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=1600" alt="Farm"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content reveal-up">
+    <div class="sec-label light">Ready to Begin?</div>
+    <h2>Grow With Nature,<br>Lead With Technology</h2>
+    <p>Join 12,000+ forward-thinking farmers and food brands already on the Stackly platform.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-primary light">Start Today <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="about.html" class="cta-ghost">Learn More</a>
     </div>
   </div>
-      <div class="social">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+      <p>Premium agriculture solutions for smart farming, organic production, and sustainable future growth.</p>
+      <div class="social-row">
+        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
       </div>
     </div>
-   
-  <div class="footer-bottom">
-    <p>© 2026 Stackly Farm. All Rights Reserved. | Smart Agriculture Solutions</p>
+    <div class="footer-links-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="service.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-links-col"><h4>Services</h4><ul><li><a href="service.html">Organic Farming</a></li><li><a href="service.html">Smart Agriculture</a></li><li><a href="service.html">Crop Management</a></li><li><a href="service.html">Modern Equipment</a></li><li><a href="service.html">AI Analytics</a></li></ul></div>
+    <div class="footer-links-col"><h4>Contact</h4><ul class="contact-list"><li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</li><li><i class="fa-solid fa-phone"></i> +91 98881 55661</li><li><i class="fa-solid fa-envelope"></i> hello@stackly.com</li><li><i class="fa-solid fa-clock"></i> Mon–Sat, 9AM–6PM IST</li></ul></div>
   </div>
+  <div class="footer-bottom"><p>© 2026 Stackly Farm. All Rights Reserved.</p><p>Smart Agriculture Solutions</p></div>
 </footer>
- 
+
 <script src="script.js"></script>
+
 </body>
 </html>

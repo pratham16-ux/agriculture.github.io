@@ -6,24 +6,18 @@
   <title>Blog — Stackly Farm</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="mobile-menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
- 
+
 <div class="menu-overlay"></div>
- 
+
+<!-- ══ DESKTOP HEADER ══ -->
 <header>
   <nav class="navbar">
-    <div class="logo">
-      <a href="index.html"> <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
-      </div></a> 
- 
-    <button class="menu-toggle" aria-label="Open menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
- 
+    <div class="logo"><a href="index.html"><img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly"></a></div>
+    <button class="menu-toggle" aria-label="Open menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
     <ul class="nav-links">
       <div class="close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></div>
       <li><a href="index.html">Home</a></li>
@@ -31,19 +25,48 @@
       <li><a href="service.html">Services</a></li>
       <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li class="mobile-auth">
-        <a href="login.html" class="btn">signin</a>
-        <a href="register.html" class="btn register">Register</a>
-      </li>
     </ul>
- 
     <div class="auth-buttons">
-      <a href="login.html" class="btn">Login</a>
-      <a href="register.html" class="btn register">Register</a>
+      <a href="login.html" class="btn-nav">Sign In</a>
+      <a href="register.html" class="btn-nav solid">Register</a>
     </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
   </nav>
 </header>
- 
+
+<!-- ══ MOBILE HEADER ══ -->
+<div class="mobile-header">
+  <a href="index.html" class="mobile-logo">
+    <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
+  </a>
+  <button class="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" role="dialog" aria-modal="true">
+  <div class="mobile-menu-inner">
+    <div class="close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></div>
+    <nav class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-buttons">
+      <a href="login.html" class="btn-signin">Sign In</a>
+      <a href="register.html" class="btn-register">Register</a>
+    </div>
+  </div>
+</div>
+
 <!-- BLOG HERO -->
 <section class="blog-hero">
   <div class="bh-overlay"></div>
@@ -64,175 +87,57 @@
     </div>
   </div>
 </section>
- 
+
 <!-- FEATURED POST -->
 <section class="blog-featured">
-  <div class="section-head reveal-up">
-    <span class="section-badge">Editor's Pick</span>
-    <h2>Featured Article</h2>
-  </div>
+  <div class="section-head reveal-up"><span class="section-badge">Editor's Pick</span><h2>Featured Article</h2></div>
   <div class="featured-card reveal-up">
-    <div class="featured-img">
-      <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?fm=webp&q=80&w=1200" alt="Featured Blog">
-      <span class="featured-label">Featured</span>
-    </div>
+    <div class="featured-img"><img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?fm=webp&q=80&w=1200" alt="Featured Blog"><span class="featured-label">Featured</span></div>
     <div class="featured-body">
-      <div class="blog-meta">
-        <span class="blog-cat">Technology</span>
-        <span class="blog-date"><i class="fa-regular fa-calendar"></i> May 12, 2026</span>
-        <span class="blog-read"><i class="fa-regular fa-clock"></i> 8 min read</span>
-      </div>
+      <div class="blog-meta"><span class="blog-cat">Technology</span><span class="blog-date"><i class="fa-regular fa-calendar"></i> May 12, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 8 min read</span></div>
       <h2>How AI and IoT Are Transforming Indian Agriculture in 2026</h2>
       <p>From drone-based crop monitoring to AI-powered yield prediction, technology is reshaping how India's 140 million farming families work — reducing costs by 35% and boosting yields by up to 50%.</p>
       <a href="#" class="btn-primary">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
- 
+
 <!-- BLOG POSTS -->
 <section class="blog-posts" id="blog-posts">
-  <div class="section-head reveal-up">
-    <span class="section-badge">Latest Articles</span>
-    <h2>From Our Blog</h2>
-    <p>Expert insights, practical tips, and agriculture news to help you grow smarter.</p>
-  </div>
+  <div class="section-head reveal-up"><span class="section-badge">Latest Articles</span><h2>From Our Blog</h2><p>Expert insights, practical tips, and agriculture news to help you grow smarter.</p></div>
   <div class="blog-grid stagger-children">
-    <div class="blog-card reveal-left">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=700" alt="Organic Farming">
-        <span class="blog-cat-tag">Organic</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> May 8, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 5 min</span></div>
-        <h3>Top 10 Organic Farming Techniques for 2026</h3>
-        <p>Discover the most effective organic farming methods being adopted by successful farmers across India this season.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="blog-card reveal-up">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?fm=webp&q=80&w=700" alt="Smart Irrigation">
-        <span class="blog-cat-tag" style="background:#3498db;">Water</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> May 3, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 6 min</span></div>
-        <h3>Smart Irrigation: Save 40% Water Without Losing Yield</h3>
-        <p>How IoT-based drip irrigation systems are helping farmers in Rajasthan and Karnataka dramatically cut water usage.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="blog-card reveal-right">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=700" alt="Soil Health">
-        <span class="blog-cat-tag" style="background:#8e44ad;">Soil Science</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 28, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 4 min</span></div>
-        <h3>Why Soil Health is the Foundation of Profitable Farming</h3>
-        <p>Understanding your soil's microbiome can be the single biggest factor in improving crop quality and long-term farm sustainability.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="blog-card reveal-left">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=700" alt="Drone Farming">
-        <span class="blog-cat-tag" style="background:#e67e22;">Technology</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 20, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 7 min</span></div>
-        <h3>Drones in Agriculture: A Practical Guide for Indian Farmers</h3>
-        <p>From crop spraying to aerial mapping, agricultural drones are now affordable and accessible for farms of all sizes in India.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="blog-card reveal-up">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?fm=webp&q=80&w=700" alt="Climate Change">
-        <span class="blog-cat-tag" style="background:#1abc9c;">Climate</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 15, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 9 min</span></div>
-        <h3>Climate-Resilient Farming: Adapting to India's Changing Monsoons</h3>
-        <p>Strategies and crop varieties helping India's farmers build resilience against increasingly unpredictable rainfall patterns.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="blog-card reveal-right">
-      <div class="blog-card-img">
-        <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?fm=webp&q=80&w=700" alt="Greenhouse">
-        <span class="blog-cat-tag" style="background:#e91e63;">Greenhouse</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 8, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 5 min</span></div>
-        <h3>Is Greenhouse Farming Right for Your Land? A Cost Analysis</h3>
-        <p>Breaking down the real ROI of controlled-environment agriculture for small and mid-sized farms across different Indian states.</p>
-        <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
+    <div class="blog-card reveal-left"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=webp&q=80&w=700" alt="Organic"><span class="blog-cat-tag">Organic</span></div><div class="blog-card-body"><div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> May 8, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 5 min</span></div><h3>Top 10 Organic Farming Techniques for 2026</h3><p>Discover the most effective organic farming methods being adopted by successful farmers across India this season.</p><a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a></div></div>
+    <div class="blog-card reveal-up"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?fm=webp&q=80&w=700" alt="Irrigation"><span class="blog-cat-tag" style="background:#3498db;">Water</span></div><div class="blog-card-body"><div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> May 3, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 6 min</span></div><h3>Smart Irrigation: Save 40% Water Without Losing Yield</h3><p>How IoT-based drip irrigation systems are helping farmers in Rajasthan and Karnataka dramatically cut water usage.</p><a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a></div></div>
+    <div class="blog-card reveal-right"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?fm=webp&q=80&w=700" alt="Soil"><span class="blog-cat-tag" style="background:#8e44ad;">Soil Science</span></div><div class="blog-card-body"><div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 28, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 4 min</span></div><h3>Why Soil Health is the Foundation of Profitable Farming</h3><p>Understanding your soil's microbiome can be the single biggest factor in improving crop quality and sustainability.</p><a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a></div></div>
+    <div class="blog-card reveal-left"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?fm=webp&q=80&w=700" alt="Drones"><span class="blog-cat-tag" style="background:#e67e22;">Technology</span></div><div class="blog-card-body"><div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 20, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 7 min</span></div><h3>Drones in Agriculture: A Practical Guide for Indian Farmers</h3><p>From crop spraying to aerial mapping, agricultural drones are now affordable and accessible for farms of all sizes.</p><a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a></div></div>
+    <div class="blog-card reveal-up"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?fm=webp&q=80&w=700" alt="Climate"><span class="blog-cat-tag" style="background:#1abc9c;">Climate</span></div><div class="blog-card-body"><div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 15, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 9 min</span></div><h3>Climate-Resilient Farming: Adapting to India's Changing Monsoons</h3><p>Strategies and crop varieties helping India's farmers build resilience against unpredictable rainfall patterns.</p><a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a></div></div>
+    <div class="blog-card reveal-right"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1492496913980-501348b61469?fm=webp&q=80&w=700" alt="Greenhouse"><span class="blog-cat-tag" style="background:#e91e63;">Greenhouse</span></div><div class="blog-card-body"><div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Apr 8, 2026</span><span class="blog-read"><i class="fa-regular fa-clock"></i> 5 min</span></div><h3>Is Greenhouse Farming Right for Your Land? A Cost Analysis</h3><p>Breaking down the real ROI of controlled-environment agriculture for small and mid-sized farms across India.</p><a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a></div></div>
   </div>
 </section>
- 
+
 <!-- NEWSLETTER -->
 <section class="blog-newsletter" id="newsletter">
   <div class="bln-inner reveal-scale">
     <div class="bln-deco">🌱</div>
     <h2>Subscribe to Our Newsletter</h2>
     <p>Get agriculture updates and smart farming tips delivered directly to your inbox every week.</p>
-    <div class="bln-form">
-      <input type="email" placeholder="Enter your email address">
-      <button class="btn-primary" type="button">Subscribe <i class="fa-solid fa-paper-plane"></i></button>
-    </div>
+    <div class="bln-form"><input type="email" placeholder="Enter your email address"><button class="btn-primary" type="button">Subscribe <i class="fa-solid fa-paper-plane"></i></button></div>
     <p class="bln-note"><i class="fa-solid fa-shield-halved"></i> No spam, unsubscribe anytime. 5,000+ farmers already subscribed.</p>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo"><a href="index.html"> <img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly">
-      </div></a> 
-      <p>Smart agriculture solutions with modern farming technologies and digital platforms for Indian farmers.</p>
-      <div class="footer-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="service.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Categories</h4>
-      <ul>
-        <li><a href="#">Organic Farming</a></li>
-        <li><a href="#">Technology</a></li>
-        <li><a href="#">Soil Science</a></li>
-        <li><a href="#">Climate</a></li>
-        <li><a href="#">Greenhouse</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <div class="contact-line"><i class="fa-solid fa-location-dot"></i><p>Bangalore, Karnataka, India</p></div>
-      <div class="contact-line"><i class="fa-solid fa-phone"></i><p>+91 98881 55661</p></div>
-      <div class="contact-line"><i class="fa-solid fa-envelope"></i><p>hello@stackly.com</p></div>
-    </div>
+<footer class="footer" id="footer">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png" alt="Stackly"><p>Premium agriculture solutions for smart farming, organic production, and sustainable future growth.</p><div class="social-row"><a href="404.html"><i class="fa-brands fa-facebook-f"></i></a><a href="404.html"><i class="fa-brands fa-instagram"></i></a><a href="404.html"><i class="fa-brands fa-x-twitter"></i></a><a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a><a href="404.html"><i class="fa-brands fa-youtube"></i></a></div></div>
+    <div class="footer-links-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="service.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-links-col"><h4>Services</h4><ul><li><a href="service.html">Organic Farming</a></li><li><a href="service.html">Smart Agriculture</a></li><li><a href="service.html">Crop Management</a></li><li><a href="service.html">Modern Equipment</a></li><li><a href="service.html">AI Analytics</a></li></ul></div>
+    <div class="footer-links-col"><h4>Contact</h4><ul class="contact-list"><li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</li><li><i class="fa-solid fa-phone"></i> +91 98881 55661</li><li><i class="fa-solid fa-envelope"></i> hello@stackly.com</li><li><i class="fa-solid fa-clock"></i> Mon–Sat, 9AM–6PM IST</li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Stackly Farm. All Rights Reserved. | Smart Agriculture Solutions</p>
-  </div>
+  <div class="footer-bottom"><p>© 2026 Stackly Farm. All Rights Reserved.</p><p>Smart Agriculture Solutions</p></div>
 </footer>
- 
+
 <script src="script.js"></script>
+<script src="mobile-menu.js"></script>
 </body>
 </html>
