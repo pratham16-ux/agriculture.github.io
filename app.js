@@ -518,3 +518,221 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('✅ Stackly Dashboard loaded');
 });
+
+/* ═══════════════════════════════════════
+   AGRIFLOW — FULL AUTH JS
+═══════════════════════════════════════ */
+
+/* ──────────────────────────────────────
+   Save User
+────────────────────────────────────── */
+function saveUser(email, role, name) {
+  localStorage.setItem("af_email", email);
+  localStorage.setItem("af_role", role);
+  localStorage.setItem("af_name", name || email.split("@")[0]);
+}
+
+/* ──────────────────────────────────────
+   Get User
+────────────────────────────────────── */
+function getUser() {
+  return {
+    email: localStorage.getItem("af_email"),
+    role: localStorage.getItem("af_role"),
+    name: localStorage.getItem("af_name")
+  };
+}
+
+/* ──────────────────────────────────────
+   Logout
+────────────────────────────────────── */
+function logout() {
+  localStorage.removeItem("af_email");
+  localStorage.removeItem("af_role");
+  localStorage.removeItem("af_name");
+
+  window.location.href = "login.html";
+}
+
+/* ──────────────────────────────────────
+   Role Selection
+────────────────────────────────────── */
+function selectRole(button) {
+
+  document.querySelectorAll(".role-tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  const role = button.getAttribute("data-role");
+
+  document.getElementById("selectedRole").value = role;
+}
+
+/* ──────────────────────────────────────
+   Toggle Password
+────────────────────────────────────── */
+function togglePass(id, btn) {
+
+  const input = document.getElementById(id);
+  const icon = btn.querySelector("i");
+
+  if (input.type === "password") {
+
+    input.type = "text";
+
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+
+  } else {
+
+    input.type = "password";
+
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+
+/* ──────────────────────────────────────
+   Handle Login
+────────────────────────────────────── */
+function handleLogin(event) {
+
+  event.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const role = document.getElementById("selectedRole").value;
+  const msg = document.getElementById("auth-msg");
+
+  /* Validation */
+
+  if (email === "" || password === "") {
+
+    msg.innerHTML = "Please fill all fields";
+    msg.style.color = "#ff4d4d";
+
+    return;
+  }
+
+  /* Demo Login Success */
+
+  saveUser(email, role);
+
+  msg.innerHTML = "Login successful!";
+  msg.style.color = "#27c46b";
+
+  /* Redirect */
+
+  setTimeout(() => {
+
+    if (role === "farmer") {
+
+      window.location.href = "dashboard-farmer.html";
+
+    }
+
+    else if (role === "buyer") {
+
+      window.location.href = "dashboard-buyer.html";
+
+    }
+
+    else if (role === "admin") {
+
+      window.location.href = "dashboard-admin.html";
+    }
+
+  }, 1000);
+}
+
+/* ──────────────────────────────────────
+   Protect Dashboard Pages
+────────────────────────────────────── */
+function protectPage(requiredRole) {
+
+  const user = getUser();
+
+  if (!user.email) {
+
+    window.location.href = "login.html";
+    return;
+  }
+
+  if (requiredRole && user.role !== requiredRole) {
+
+    alert("Access Denied!");
+
+    window.location.href = "login.html";
+  }
+}
+
+/* ──────────────────────────────────────
+   Auto Fill Username
+────────────────────────────────────── */
+window.addEventListener("DOMContentLoaded", () => {
+
+  const username = document.getElementById("user-name");
+
+  if (username) {
+
+    const user = getUser();
+
+    username.innerHTML = user.name || "User";
+  }
+});
+
+/* ──────────────────────────────────────
+   Show Logged In User
+────────────────────────────────────── */
+
+window.addEventListener("DOMContentLoaded", () => {
+
+  const email = localStorage.getItem("af_email");
+  const role = localStorage.getItem("af_role");
+
+  /* Redirect if not logged in */
+
+  if (!email) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  /* Show Email */
+
+  const userEmail = document.getElementById("userEmail");
+
+  if (userEmail) {
+    userEmail.innerText = email;
+  }
+
+  /* Show Role */
+
+  const userRole = document.getElementById("userRole");
+
+  if (userRole) {
+
+    userRole.innerText =
+      role.charAt(0).toUpperCase() + role.slice(1);
+  }
+
+  /* Avatar Letter */
+
+  const avatar = document.getElementById("userAvatar");
+
+  if (avatar) {
+
+    avatar.innerText = email.charAt(0).toUpperCase();
+  }
+});
+
+/* ===== SHOW LOGIN EMAIL & NAME ON DASHBOARD ===== */
+
+const userEmail = localStorage.getItem("af_email") || "user@gmail.com";
+const userName = localStorage.getItem("af_name") || userEmail.split("@")[0];
+
+document.getElementById("sidebarEmail").innerText = userEmail;
+document.getElementById("sidebarName").innerText = userName;
+document.getElementById("sidebarInitial").innerText =
+  userName.charAt(0).toUpperCase();
