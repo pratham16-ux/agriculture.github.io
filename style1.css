@@ -1597,3 +1597,51 @@ body::before {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ── TOPBAR USER CHIP (desktop) ── */
+.topbar-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(90,158,111,.08);
+  border: 1px solid rgba(90,158,111,.2);
+  border-radius: 50px;
+  padding: 4px 14px 4px 4px;
+  cursor: default;
+  transition: var(--transition);
+}
+.topbar-user-chip:hover {
+  background: rgba(90,158,111,.14);
+  border-color: rgba(90,158,111,.35);
+}
+
+.topbar-avatar-ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sage-400), var(--teal-400));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .82rem;
+  font-weight: 800;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(90,158,111,.3);
+  text-transform: uppercase;
+}
+
+.topbar-user-name {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--sage-600);
+  white-space: nowrap;
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Hide on mobile (sidebar shows it instead) */
+@media (max-width: 900px) {
+  .topbar-user-chip { display: none; }
+}

@@ -360,6 +360,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (welcomeMsg) {
     welcomeMsg.textContent = `Welcome back, ${displayName} 👋`;
   }
+/* ── Topbar avatar initial ── */
+const topbarAvatar = document.getElementById('topbarAvatar');
+if (topbarAvatar) topbarAvatar.textContent = displayName.charAt(0).toUpperCase();
+
+/* ── Topbar name (replaces email in chip) ── */
+const userEmailEl = document.getElementById('userEmail');
+if (userEmailEl) userEmailEl.textContent = displayName;
 
   /* ── Topbar email chip ── */
   ['userEmail', 'sidebarEmail'].forEach(id => {
